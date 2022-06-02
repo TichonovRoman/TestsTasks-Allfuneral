@@ -1,0 +1,55 @@
+.block {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px 12px;
+  gap: 20px;
+
+  width: 244px;
+  height: 40px;
+
+  background: #F7F7F7;
+  border-radius: 2px;
+}
+
+.bigButton {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 60px;
+}
+
+.bigButton :hover {
+  /*background-color: white;*/
+}
+
+.button {
+  position: absolute;
+  /*display: flex;*/
+  /*flex-direction: row;*/
+  /*align-items: flex-start;*/
+  /*padding: 20px 14px;*/
+  /*gap: 10px;*/
+
+  width: 48px;
+  height: 60px;
+  z-index: 1;
+
+  background: #A4C7A5;
+  /*flex: none;*/
+  /*order: 1;*/
+  /*flex-grow: 0;*/
+}
+
+.marketIcons {
+  width: 18px;
+  height: 16px;
+  z-index: 2;
+  position: absolute;
+}
+.marketIcons :hover {
+  /*background-color: white;*/
+}
+
