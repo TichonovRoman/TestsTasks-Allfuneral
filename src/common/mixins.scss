@@ -1,0 +1,29 @@
+
+
+@mixin iconButton( $background) {
+  position: absolute;
+  width: 48px;
+  height: 60px;
+  z-index: 1;
+  background: $background;
+}
+@mixin buttonsIcon() {
+  width: 18px;
+  height: 16px;
+  z-index: 2;
+  position: absolute;
+}
+
+@mixin bigButton($background) {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 60px;
+
+  cursor: pointer;
+
+  background-color: $background
+}
+
