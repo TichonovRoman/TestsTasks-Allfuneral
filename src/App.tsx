@@ -1,22 +1,38 @@
 import React from 'react';
-import s from './App.module.css';
-import image from "./icons/Market.svg"
+import style from './App.module.scss';
+import MarketIcons from "./icons/Market.svg"
+import Footer from "./Footer/Footer";
+import Header from "./Header/Header";
 
 function App() {
-  return (
-    <div className="App">
-      <div className={s.block}>\
-          <div className={s.bigButton}>
-              <div className={s.button}></div>
-              <img className={s.marketIcons} src={image}/>
-          </div>
+    return (
+        <div className={style.appWrapper}>
+            <div className={style.navBar}>
+                <div>
+                    {/*верхние кнопки 3 шт*/}
+                    <div className={style.bigButton}>
+                        <div className={style.button}></div>
+                        <img className={style.buttonsIcon} src={MarketIcons}/>
+                    </div>
+                    <div className={style.bigButton}>
+                        <div className={style.button}></div>
+                        <img className={style.buttonsIcon} src={MarketIcons}/>
+                    </div>
+                    <div className={style.bigButton}>
+                        <div className={style.button}></div>
+                        <img className={style.buttonsIcon} src={MarketIcons}/>
+                    </div>
+                </div>
 
+                <div>
+                    {/*нижние кнопки 3 шт*/}
+                </div>
 
-
-      </div>
-
-    </div>
-  );
+            </div>
+            <Header/>
+            <Footer/>
+        </div>
+    );
 }
 
 export default App;

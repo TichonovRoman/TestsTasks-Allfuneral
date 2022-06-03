@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('fonts/proximanova_regular.ttf');
+}
+
+
+.footer {
+    grid-area: c;
+    border: 1px solid;
+    max-height: 128px;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerInscription {
+    font-family: 'Proxima Nova';
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: #B9B9B9;
+}
