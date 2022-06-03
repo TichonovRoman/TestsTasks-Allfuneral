@@ -1,13 +1,6 @@
 @font-face {
     font-family: 'Proxima Nova';
-    src: url('fonts/proximanova_regular.ttf');
-}
-
-.header {
-    position: relative;
-    border: 1px solid;
-    grid-area: b;
-    display: flex;
+    src: url('../../fonts/proximanova_regular.ttf');
 }
 
 .secondaryMenu {
@@ -94,8 +87,4 @@
     letter-spacing: 0.2px;
     color: #3B3B3B;
     padding-top: 3px;
-}
-
-.mainPage {
-background-color: #FFFFFF;
 }

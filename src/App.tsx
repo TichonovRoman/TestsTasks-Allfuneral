@@ -1,35 +1,23 @@
 import React from 'react';
 import style from './App.module.scss';
-import MarketIcons from "./icons/Market.svg"
 import Footer from "./Footer/Footer";
-import Header from "./Header/Header";
+import Organization from "./Header/Organization/Organization";
+import NavBar from "./NavBar/NavBar";
+import {Route, Routes} from "react-router-dom";
+import OtherPage from "./Header/OtherPages/OtherPage";
 
 function App() {
     return (
         <div className={style.appWrapper}>
-            <div className={style.navBar}>
-                <div>
-                    {/*верхние кнопки 3 шт*/}
-                    <div className={style.bigButton}>
-                        <div className={style.button}></div>
-                        <img className={style.buttonsIcon} src={MarketIcons}/>
-                    </div>
-                    <div className={style.bigButton}>
-                        <div className={style.button}></div>
-                        <img className={style.buttonsIcon} src={MarketIcons}/>
-                    </div>
-                    <div className={style.bigButton}>
-                        <div className={style.button}></div>
-                        <img className={style.buttonsIcon} src={MarketIcons}/>
-                    </div>
-                </div>
-
-                <div>
-                    {/*нижние кнопки 3 шт*/}
-                </div>
-
-            </div>
-            <Header/>
+            <NavBar/>
+            <Routes>
+                <Route path={"/home"} element={<OtherPage title={"Home Page"}/>}/>
+                <Route path={"/organization"} element={<Organization/>}/>
+                <Route path={"/search"} element={<OtherPage title={"Search Page"}/>}/>
+                <Route path={"/settings"} element={<OtherPage title={"Settings Page"}/>}/>
+                <Route path={"/chat"} element={<OtherPage title={"Chat Page"}/>}/>
+                <Route path={"/exit"} element={<OtherPage title={"Exit Page"}/>}/>
+            </Routes>
             <Footer/>
         </div>
     );

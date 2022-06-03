@@ -1,7 +1,3 @@
-/*@font-face {*/
-/*    font-family: 'Proxima Nova';*/
-/*    src: url('./fonts/proximaNova/proximanova_regular.ttf');*/
-/*}*/
 
 @import "./common/mixins";
 
@@ -11,14 +7,10 @@
     grid-template-areas:
     "a b"
     "c c";
-    /*width: 1200px;*/
     height: 100vh;
     grid-template-columns: 48px auto;
-
-
     grid-template-rows: 1fr auto;
-    /*grid-auto-columns: 2fr 12fr;*/
-    /*grid-gap: 10px;*/
+
 }
 
 .navBar {
@@ -29,22 +21,21 @@
 }
 
 .bigButton {
-    @include bigButton()
+    @include bigButton(#82B284)
 }
 
 .bigButton :hover {
-    /*background-color: white;*/
+    @include bigButton(#A4C7A5)
+    //background-color: #A4C7A5;
 }
 
 .button {
-    @include iconButton(#A4C7A5)
-   }
+    @include iconButton(#82B284)
+}
 
 .buttonsIcon {
     @include buttonsIcon()
 }
 
-.iconsButton :hover {
-    /*background-color: white;*/
-}
+
 

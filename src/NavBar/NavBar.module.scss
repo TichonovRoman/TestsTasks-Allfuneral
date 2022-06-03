@@ -1,0 +1,34 @@
+
+@import "../common/mixins";
+
+.navBar {
+    background-color: #82B284;
+    grid-area: a;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bigButton {
+    @include bigButton(#82B284)
+}
+
+//.bigButton :hover {
+//    @include bigButton(#A4C7A5)
+//    //background-color: #A4C7A5;
+//}
+.bigButtonActive {
+    @include bigButton(#A4C7A5)
+    //background-color: #A4C7A5;
+}
+
+.button {
+    @include iconButton(#82B284)
+}
+
+.buttonsIcon {
+    @include buttonsIcon()
+}
+
+
+
