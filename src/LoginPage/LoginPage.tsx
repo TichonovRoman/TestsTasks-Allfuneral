@@ -1,14 +1,23 @@
 import React, {useCallback, useState} from 'react';
 import style from "./LoginPage.module.scss"
 import CustomInput from "./Input/CustomInput";
+import {useDispatch} from "react-redux";
+import {SetCompaniesTC} from "../redux/companies-reducer";
 
 type LoginPagePropsPage = {}
 
 const LoginPage = ({}: LoginPagePropsPage) => {
 
-    const [nameValue, setNameValue] = useState("")
+    const dispatch: any = useDispatch()
+
+
+    const [nameValue, setNameValue] = useState<string>("")
 
     const memoizedSetNameValue = useCallback(setNameValue, [])
+
+    const setToken = () => {
+        dispatch(SetCompaniesTC())
+    }
 
     return (
         <div className={style.loginPage}>
@@ -26,7 +35,11 @@ const LoginPage = ({}: LoginPagePropsPage) => {
                 <CustomInput nameValue={nameValue} setNameValue={memoizedSetNameValue}/>
                 <div className={style.buttonGroup}>
                     <button className={style.loginCancelButton}>ОТМЕНА</button>
-                    <button className={style.loginSaveButton}>СОХРАНИТЬ</button>
+                    <button
+                        className={style.loginSaveButton}
+                        onClick={setToken}
+
+                    >СОХРАНИТЬ</button>
                 </div>
             </div>
         </div>
