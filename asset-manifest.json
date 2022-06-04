@@ -1,16 +1,31 @@
 {
   "files": {
-    "main.css": "/TestsTasks-Allfuneral/static/css/main.0c68bb3a.css",
-    "main.js": "/TestsTasks-Allfuneral/static/js/main.c3251c2a.js",
+    "main.css": "/TestsTasks-Allfuneral/static/css/main.5ece6a7c.css",
+    "main.js": "/TestsTasks-Allfuneral/static/js/main.bed9bd26.js",
+    "static/css/144.ab64ab8d.chunk.css": "/TestsTasks-Allfuneral/static/css/144.ab64ab8d.chunk.css",
+    "static/js/144.9c478430.chunk.js": "/TestsTasks-Allfuneral/static/js/144.9c478430.chunk.js",
+    "static/css/396.a06858f1.chunk.css": "/TestsTasks-Allfuneral/static/css/396.a06858f1.chunk.css",
+    "static/js/396.38dbb569.chunk.js": "/TestsTasks-Allfuneral/static/js/396.38dbb569.chunk.js",
     "static/js/787.6d694c4a.chunk.js": "/TestsTasks-Allfuneral/static/js/787.6d694c4a.chunk.js",
+    "static/media/proximanova_regular.ttf": "/TestsTasks-Allfuneral/static/media/proximanova_regular.8181ca4b7c2d1189d78a.ttf",
+    "static/media/Settings.svg": "/TestsTasks-Allfuneral/static/media/Settings.2a00b183bd04b8146b6d553ca05434e5.svg",
     "static/media/Market.svg": "/TestsTasks-Allfuneral/static/media/Market.920d693fdee4a6466475100ed9733802.svg",
+    "static/media/Chat.svg": "/TestsTasks-Allfuneral/static/media/Chat.0e7897e30f98f3546838085dd697ea43.svg",
+    "static/media/Home.svg": "/TestsTasks-Allfuneral/static/media/Home.f16ded50fc3edb3e5fbcfd0bfb2f8a21.svg",
     "index.html": "/TestsTasks-Allfuneral/index.html",
-    "main.0c68bb3a.css.map": "/TestsTasks-Allfuneral/static/css/main.0c68bb3a.css.map",
-    "main.c3251c2a.js.map": "/TestsTasks-Allfuneral/static/js/main.c3251c2a.js.map",
+    "static/media/OrganizationGroupIcon.svg": "/TestsTasks-Allfuneral/static/media/OrganizationGroupIcon.bde01a1d36ed2bc780e775baf17b1d44.svg",
+    "static/media/Exit.svg": "/TestsTasks-Allfuneral/static/media/Exit.a46b6e44987600dc52aec03168a59227.svg",
+    "static/media/Search.svg": "/TestsTasks-Allfuneral/static/media/Search.e7c4d5a49d6f523613223f7945352b27.svg",
+    "main.5ece6a7c.css.map": "/TestsTasks-Allfuneral/static/css/main.5ece6a7c.css.map",
+    "main.bed9bd26.js.map": "/TestsTasks-Allfuneral/static/js/main.bed9bd26.js.map",
+    "144.ab64ab8d.chunk.css.map": "/TestsTasks-Allfuneral/static/css/144.ab64ab8d.chunk.css.map",
+    "144.9c478430.chunk.js.map": "/TestsTasks-Allfuneral/static/js/144.9c478430.chunk.js.map",
+    "396.a06858f1.chunk.css.map": "/TestsTasks-Allfuneral/static/css/396.a06858f1.chunk.css.map",
+    "396.38dbb569.chunk.js.map": "/TestsTasks-Allfuneral/static/js/396.38dbb569.chunk.js.map",
     "787.6d694c4a.chunk.js.map": "/TestsTasks-Allfuneral/static/js/787.6d694c4a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c68bb3a.css",
-    "static/js/main.c3251c2a.js"
+    "static/css/main.5ece6a7c.css",
+    "static/js/main.bed9bd26.js"
   ]
 }
