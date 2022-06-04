@@ -27,3 +27,11 @@
   background-color: $background
 }
 
+@mixin otherPageFontColor( $color) {
+  color: $color;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

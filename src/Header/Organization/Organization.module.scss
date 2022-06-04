@@ -1,5 +1,7 @@
+@import "src/common/sass/variables";
+
 @font-face {
-    font-family: 'Proxima Nova';
+    font-family: $textFontFamily;
     src: url('../fonts/proximanova_regular.ttf');
 }
 
@@ -59,7 +61,7 @@
 .entityListName {
     transform: matrix(-1, 0, 0, 1, 0, 0);
 
-    font-family: 'Proxima Nova';
+    font-family: $textFontFamily;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -69,12 +71,12 @@
     display: flex;
     align-items: center;
 
-    color: #82B284;
+    color: $primaryColor;
 }
 
 .whichAgent {
     transform: matrix(-1, 0, 0, 1, 0, 0);
-    font-family: 'Proxima Nova';
+    font-family: $textFontFamily;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -86,7 +88,7 @@
 
 .agentRole {
     transform: matrix(-1, 0, 0, 1, 0, 0);
-    font-family: 'Proxima Nova';
+    font-family: $textFontFamily;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;

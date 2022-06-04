@@ -1,8 +1,10 @@
-.page {
-  color: #82B284;
-  font-size: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@import "../../common/sass/mixins";
+@import "../../common/sass/variables";
 
+.page {
+  @include otherPageFontColor($primaryColor)
+}
+
+.redPage {
+  @include otherPageFontColor(salmon)
 }

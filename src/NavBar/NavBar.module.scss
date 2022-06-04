@@ -1,8 +1,9 @@
 
-@import "../common/mixins";
+@import "../common/sass/mixins";
+@import "../common/sass/variables";
 
 .navBar {
-    background-color: #82B284;
+    background-color: $primaryColor;
     grid-area: a;
     display: flex;
     flex-direction: column;
@@ -10,20 +11,15 @@
 }
 
 .bigButton {
-    @include bigButton(#82B284)
+    @include bigButton($primaryColor)
 }
 
-//.bigButton :hover {
-//    @include bigButton(#A4C7A5)
-//    //background-color: #A4C7A5;
-//}
 .bigButtonActive {
-    @include bigButton(#A4C7A5)
-    //background-color: #A4C7A5;
+    @include bigButton($secondColor)
 }
 
 .button {
-    @include iconButton(#82B284)
+    @include iconButton($primaryColor)
 }
 
 .buttonsIcon {

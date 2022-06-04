@@ -3,7 +3,7 @@ import style from "./IconButton.module.scss";
 import {NavLink} from "react-router-dom";
 
 type IconButtonPropsType = {
-    image: any,
+    image: string,
     linkAddress: string,
 }
 

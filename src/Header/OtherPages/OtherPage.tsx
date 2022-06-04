@@ -6,8 +6,11 @@ type OtherPagePropsPage = {
 }
 
 const OtherPage = ({title}: OtherPagePropsPage) => {
+
+    const finalClass = title === "Page Not Found" ? style.redPage : style.page;
+
     return (
-        <div className={style.page}>
+        <div className={finalClass}>
             {title}
         </div>
     );
