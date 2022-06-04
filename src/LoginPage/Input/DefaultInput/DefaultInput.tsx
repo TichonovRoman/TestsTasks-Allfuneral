@@ -8,7 +8,7 @@ type DefaultInputPropsType = {
     inputValueChangeHandler: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
-const DefaultInput = ({title, nameValue, inputValueChangeHandler}: DefaultInputPropsType) => {
+const DefaultInput = React.memo( ({title, nameValue, inputValueChangeHandler}: DefaultInputPropsType) => {
     return <input
         type={"text"}
         placeholder={title}
@@ -17,6 +17,6 @@ const DefaultInput = ({title, nameValue, inputValueChangeHandler}: DefaultInputP
         autoFocus
         onChange={inputValueChangeHandler}
     />
-}
+})
 
 export default DefaultInput;

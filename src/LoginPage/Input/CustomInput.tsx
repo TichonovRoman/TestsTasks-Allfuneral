@@ -1,16 +1,17 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, useCallback} from 'react';
 import style from "./CustomInput.module.scss"
 import DefaultInput from "./DefaultInput/DefaultInput";
 
-type InputPropsType = {}
+type InputPropsType = {
+    nameValue: string,
+    setNameValue: (value: string)=> void
+}
 
-const CustomInput = ({}: InputPropsType) => {
+const CustomInput = React.memo( ({nameValue, setNameValue}: InputPropsType) => {
 
-    const [nameValue, setNameValue] = useState("")
-
-    const inputValueChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    const inputValueChangeHandler = useCallback((event: ChangeEvent<HTMLInputElement>) => {
         setNameValue(event.currentTarget.value)
-    }
+    }, [])
 
     return (
         <div>
@@ -18,7 +19,7 @@ const CustomInput = ({}: InputPropsType) => {
                 nameValue
                     ? <form>
                         <div className={style.fieldset}>
-                            <label className={style.labelName}>Имя</label>
+                            <label className={style.labelName}>ИМЯ</label>
                             <DefaultInput title={"Имя"}
                                           nameValue={nameValue}
                                           inputValueChangeHandler={inputValueChangeHandler}/>
@@ -31,7 +32,7 @@ const CustomInput = ({}: InputPropsType) => {
         </div>
 
     );
-};
+})
 
 
 export default CustomInput;

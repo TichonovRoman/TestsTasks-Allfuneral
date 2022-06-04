@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useCallback, useState} from 'react';
 import style from "./LoginPage.module.scss"
 import CustomInput from "./Input/CustomInput";
 
 type LoginPagePropsPage = {}
 
 const LoginPage = ({}: LoginPagePropsPage) => {
+
+    const [nameValue, setNameValue] = useState("")
+
+    const memoizedSetNameValue = useCallback(setNameValue, [])
 
     return (
         <div className={style.loginPage}>
@@ -19,7 +23,7 @@ const LoginPage = ({}: LoginPagePropsPage) => {
             </div>
 
             <div className={style.enterNameBlock}>
-                <CustomInput/>
+                <CustomInput nameValue={nameValue} setNameValue={memoizedSetNameValue}/>
                 <div className={style.buttonGroup}>
                     <button className={style.loginCancelButton}>ОТМЕНА</button>
                     <button className={style.loginSaveButton}>СОХРАНИТЬ</button>
