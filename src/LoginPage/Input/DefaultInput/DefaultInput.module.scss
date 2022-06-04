@@ -1,0 +1,13 @@
+@import "../../../../src/common/sass/mixins";
+@import "../../../../src/common/sass/variables";
+
+.loginInput {
+  @include LoginInput(#CDCDCD)
+}
+
+.loginInput:hover {
+  @include LoginInput(#808080)
+}
+.loginInput:focus {
+  @include LoginInput(#3B3B3B)
+}

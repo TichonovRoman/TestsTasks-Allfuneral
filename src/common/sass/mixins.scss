@@ -34,4 +34,41 @@
   align-items: center;
   justify-content: center;
 }
+@mixin modalTitleFont() {
+  font-family: $textFontFamily;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  color: #3B3B3B;
+}
+
+@mixin modalDescriptionFont() {
+  font-family: $textFontFamily;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #3B3B3B;
+}
+
+@mixin LoginPageButton($colorText) {
+  font-family: $textFontFamily;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  border: none;
+  background: none;
+  cursor:pointer;
+  color: $colorText;
+}
+
+@mixin LoginInput($color) {
+
+  cursor:pointer;
+  padding: 10px 12px;
+  width: 200px;
+  height: 15px;
+  border: 1px solid $color;
+  border-radius: 2px;
+}
 

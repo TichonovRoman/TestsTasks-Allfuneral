@@ -4,6 +4,7 @@ import Footer from "./Footer/Footer";
 import NavBar from "./NavBar/NavBar";
 import {Route, Routes} from "react-router-dom";
 import Preloader from "./common/Preloader/Preloader";
+import LoginPage from "./LoginPage/LoginPage";
 const Organization = React.lazy(() => import('./Header/Organization/Organization'));
 const OtherPage = React.lazy(() => import('./Header/OtherPages/OtherPage'));
 
@@ -15,6 +16,7 @@ function App() {
             <React.Suspense fallback={<Preloader/>}>
             <Routes>
                 <Route path={"/home"} element={<OtherPage title={"Home Page"}/>}/>
+                <Route path={"/login"} element={<LoginPage/>}/>
                 <Route path={"/"} element={<OtherPage title={"Main Page"}/>}/>
                 <Route path={"*"} element={<OtherPage title={"Page Not Found"}/>}/>
                 <Route path={"/organization"} element={<Organization/>}/>
