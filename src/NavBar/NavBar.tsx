@@ -15,9 +15,6 @@ const appPagesData: appPagesDataType = {
         {image: homeIcon, linkAddress: "/home"},
         {image: marketIcon, linkAddress: "/organization"},
         {image: searchIcon, linkAddress: "/search"},
-
-        //тествоое:
-        {image: searchIcon, linkAddress: "/login"},
     ],
     downPageButton: [
         {image: settingsIcon, linkAddress: "/settings"},

@@ -16,7 +16,6 @@ function App() {
             <React.Suspense fallback={<Preloader/>}>
             <Routes>
                 <Route path={"/home"} element={<OtherPage title={"Home Page"}/>}/>
-                <Route path={"/login"} element={<LoginPage/>}/>
                 <Route path={"/"} element={<OtherPage title={"Main Page"}/>}/>
                 <Route path={"*"} element={<OtherPage title={"Page Not Found"}/>}/>
                 <Route path={"/organization"} element={<Organization/>}/>

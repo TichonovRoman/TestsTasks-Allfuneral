@@ -9,16 +9,40 @@ const instance = axios.create({
     baseURL: "http://135.181.35.61:2112/",
     withCredentials: false,
     headers: {
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
     }
 });
 
+
+export type newCompaniesInfoDataType = {
+
+    "name": string,
+    "shortName": string,
+    "businessEntity": string,
+    // "contract": {
+    //     no:  string,
+    //     issue_date:  string,
+    // },
+    type: string[]
+
+}
 // api
 
 
 export const authAPI = {
     getCompaniesInfo() {
         return instance.get(`/companies/12`)
+    },
+    patchCompaniesInfo(newInfo: newCompaniesInfoDataType) {
+
+        return instance.patch(`/companies/12`, newInfo, {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+    },
+    deleteCompaniesInfo(id: string) {
+        return instance.delete(`/companies/${id}`)
     },
 }
 

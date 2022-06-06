@@ -72,7 +72,11 @@ const InfoBlockName = () => {
 
                     : <div>
                         {infoBlockName}
-                        <button className={style.infoBlockNameRedactionButton} onClick={onEditMode}>
+                        <button
+                            title={"Редактировать название"}
+                            className={style.infoBlockNameRedactionButton}
+                            onClick={onEditMode}
+                        >
                             <img src={editIcon}/>
                         </button>
                     </div>

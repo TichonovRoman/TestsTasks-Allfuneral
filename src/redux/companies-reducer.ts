@@ -1,6 +1,5 @@
-// import { authAPI } from '../components/api/cards-api';
 import {Dispatch} from "redux";
-import {authAPI} from "../api/testProject-api";
+import {authAPI, newCompaniesInfoDataType} from "../api/testProject-api";
 
 
 export type CompaniesStateType = {
@@ -24,9 +23,7 @@ export type CompaniesStateType = {
             "thumbpath": string,
         }
     ],
-
     infoBlockName: string,
-
     isEnablePreloader: boolean,
 }
 
@@ -35,9 +32,9 @@ type ActionsType = SetCompaniesACType | ChangeStatusPreloaderACType | EditNameIn
 const initialState: CompaniesStateType = {
     id: "12",
     contactId: "16",
-    name: "ООО Фирма «Перспективные захоронения»",
-    shortName: "Перспективные захоронения",
-    businessEntity: "ООО",
+    name: "Полное тестовое имя",
+    shortName: "Тестовое имя",
+    businessEntity: "Тест",
     contract: {
         no: "12345",
         issue_date: "2015-03-12T00:00:00Z"
@@ -53,10 +50,7 @@ const initialState: CompaniesStateType = {
             thumbpath: "http://135.181.35.61:2112/0b8fc462dcabf7610a91_160x160.png"
         }
     ],
-
-
     infoBlockName: "Перспективные захоронения",
-
     isEnablePreloader: false,
 }
 
@@ -64,8 +58,7 @@ export const companiesReducer = (state: CompaniesStateType = initialState, actio
     switch (action.type) {
         case "SET-COMPANIES":
         case "EDIT-NAME-INFO-BLOCK":
-            //проверить как сэтает, меняет ли значения или вручн. копировать надо, map и пр.
-            return {...state, ...action.payload}
+              return {...state, ...action.payload}
         case "CHANGE-STATUS-PRELOADER":
             return {...state, ...action.payload}
         default:
@@ -74,11 +67,11 @@ export const companiesReducer = (state: CompaniesStateType = initialState, actio
 }
 
 
-export const SetCompaniesAC = (companiesInfo: string) => {
+export const SetCompaniesAC = (companiesInfo: CompaniesStateType) => {
     return {
         type: "SET-COMPANIES",
         payload: {
-            companiesInfo
+            ...companiesInfo
         }
     } as const
 }
@@ -108,17 +101,50 @@ export type EditNameInfoBlockACType = ReturnType<typeof EditNameInfoBlockAC>
 export const SetCompaniesTC = () => {
 
     return (dispatch: Dispatch) => {
-        // диспатчим крутилку
-
-
-        dispatch(ChangeStatusPreloaderAC(true))
+         dispatch(ChangeStatusPreloaderAC(true))
         authAPI.getCompaniesInfo()
             .then((response) => {
                 dispatch(SetCompaniesAC(response.data))
-
             })
             .catch((err) => {
                 // dispatch(errorMessageAC("some error"))
+            })
+            .finally(() => {
+                //выключаем крутилку
+                dispatch(ChangeStatusPreloaderAC(false))
+            })
+    }
+}
+
+export const companyInfoEditTC = (newInfo: newCompaniesInfoDataType) => {
+
+    return (dispatch: Dispatch) => {
+        dispatch(ChangeStatusPreloaderAC(true))
+        authAPI.patchCompaniesInfo(newInfo)
+            .then((response) => {
+                dispatch(SetCompaniesAC(response.data))
+            })
+            .catch((err) => {
+                               // dispatch(errorMessageAC("some error"))
+            })
+            .finally(() => {
+                //выключаем крутилку
+                dispatch(ChangeStatusPreloaderAC(false))
+            })
+    }
+}
+
+export const deleteCompanyCardTC = (id: string) => {
+
+    return (dispatch: Dispatch) => {
+
+        dispatch(ChangeStatusPreloaderAC(true))
+        authAPI.deleteCompaniesInfo(id)
+            .then((response) => {
+              console.log(response)
+            })
+            .catch((err) => {
+                               // dispatch(errorMessageAC("some error"))
             })
             .finally(() => {
                 //выключаем крутилку
