@@ -13,7 +13,7 @@ const SecondaryMenu = () => {
                 <div className={style.entity}>
                     <div className={style.entityContent}>
                         <img className={style.organizationGroupIcon} alt={"icon"} src={OrganizationGroupIcon} />
-                        <div className={style.entityListName}>ОРГАНИЗАЦИИ</div>
+                        <div className={style.entityListName}>Организации</div>
                     </div>
 
                 </div>

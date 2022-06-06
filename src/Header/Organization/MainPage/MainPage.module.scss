@@ -1,0 +1,15 @@
+@import "src/common/sass/variables";
+
+@font-face {
+  font-family: $textFontFamily;
+  src: url('../../fonts/proximanova_regular.ttf');
+}
+
+.mainPage {
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  //justify-content: start;
+  align-items: center;
+}

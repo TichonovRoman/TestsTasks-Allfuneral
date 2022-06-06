@@ -1,21 +1,30 @@
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url('fonts/proximanova_regular.ttf');
-}
+@import "../common/sass/mixins";
+@import "../common/sass/variables";
 
+//@font-face {
+//    font-family: 'Proxima Nova';
+//    src: url('fonts/proximanova_regular.ttf');
+//}
 
 .footer {
     grid-area: c;
     border: 1px solid;
-    max-height: 128px;
+    height: 128px;
     background: #FFFFFF;
+    display: grid;
+    grid-template-columns: 272px 1fr;
+   }
+
+.emptyBlock {
+}
+
+.descriptionBlock {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .footerInscription {
-    font-family: 'Proxima Nova';
+    font-family: $textFontFamily;
     height: 48px;
     display: flex;
     flex-direction: column;
@@ -27,4 +36,6 @@
     line-height: 16px;
     text-align: center;
     color: #B9B9B9;
+
+    margin-top: 32px;
 }

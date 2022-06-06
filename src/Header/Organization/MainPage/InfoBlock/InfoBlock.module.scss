@@ -1,0 +1,40 @@
+@import "src/common/sass/variables";
+
+@font-face {
+  font-family: $textFontFamily;
+  src: url('../../../fonts/proximanova_regular.ttf');
+}
+
+.infoBlock {
+  position: relative;
+  width: 100%;
+  border: 1px solid;
+  //min-width: 1088px;
+  min-width: 1088px;
+  //padding-left: 40px;
+  //padding-right: 40px;
+}
+
+.burialBlock {
+  height: 260px;
+  border: 1px solid;
+  //min-width: 1088px;
+  //width: 100%;
+  border-bottom: 1px solid #E5E5E5;
+
+  //padding-left: 40px;
+}
+
+.contactsBlock {
+  //border: 1px solid;
+  height: 188px;
+  //min-width: 1088px;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.photoBlock {
+  //border: 1px solid;
+  height: 368px;
+  //min-width: 1088px;
+  border-bottom: 1px solid #E5E5E5;
+}

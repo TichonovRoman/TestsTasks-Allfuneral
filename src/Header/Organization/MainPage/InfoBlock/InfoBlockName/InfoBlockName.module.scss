@@ -1,0 +1,28 @@
+@import "src/common/sass/variables";
+
+@font-face {
+  font-family: $textFontFamily;
+  src: url('../../../../fonts/proximanova_regular.ttf');
+}
+
+.infoBlockName {
+  border: 1px solid red;
+  font-family: $textFontFamily;
+  //font-style: normal;
+  //font-weight: 400;
+  margin-left: 40px;
+  margin-top: 24px;
+  font-size: 20px;
+  line-height: 24px;
+  color: #222222;
+
+  display: flex;
+  align-items: center;
+}
+
+.infoBlockNameRedactionButton {
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-left: 10px;
+}

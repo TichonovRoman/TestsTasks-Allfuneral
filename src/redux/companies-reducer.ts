@@ -24,6 +24,9 @@ export type CompaniesStateType = {
             "thumbpath": string,
         }
     ],
+
+    infoBlockName: string,
+
     isEnablePreloader: boolean,
 }
 
@@ -50,6 +53,9 @@ const initialState: CompaniesStateType = {
             thumbpath: "http://135.181.35.61:2112/0b8fc462dcabf7610a91_160x160.png"
         }
     ],
+
+
+    infoBlockName: "Перспективные захоронения",
 
     isEnablePreloader: false,
 }
