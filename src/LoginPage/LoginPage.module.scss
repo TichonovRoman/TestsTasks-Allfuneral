@@ -54,10 +54,10 @@
 
 .loginCancelButton:hover {
   @include LoginPageButton(#B9B9B9);
-  font-size: 17px;
+  transform: scale(1.1);
 }
 .loginSaveButton:hover {
   @include LoginPageButton(#82B284);
-  font-size: 17px;
+  transform: scale(1.1);
 }
 

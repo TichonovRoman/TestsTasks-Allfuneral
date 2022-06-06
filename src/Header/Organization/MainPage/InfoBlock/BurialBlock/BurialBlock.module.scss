@@ -1,0 +1,82 @@
+@import "src/common/sass/variables";
+@import "src/common/sass/mixins";
+
+//@font-face {
+//  font-family: $textFontFamily;
+//  src: url('../../../../fonts/proximanova_regular.ttf');
+//}
+//@font-face {
+//  font-family: "Proxima Nova Light";
+//  src: url('../../../../fonts');
+//}
+
+
+.burialBlock {
+  //height: 180px;
+  border: 1px solid;
+  background-color: antiquewhite;
+  //min-width: 1088px;
+  //width: 100%;
+  border-bottom: 1px solid #E5E5E5;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+
+  //padding-left: 40px;
+}
+
+.burialBlockName {
+  font-family: $textFontFamily;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #3B3B3B;
+
+}
+
+.burialBlockNameBlock {
+  border: 1px solid;
+  display: flex;
+  height: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+
+.infoBlockNameRedactionButton {
+  @include infoBlockNameRedactionButton
+}
+
+.companyInformation {
+  border: 1px solid;
+  height: 148px;
+}
+.lineInfoWrapper {
+  display: flex;
+}
+
+.lineName {
+  width: 150px;
+  border: 1px solid;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: #3B3B3B;
+
+}
+
+.lineValue {
+  //font-family: $textFontFamily;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+
+  color: #3B3B3B;
+
+}

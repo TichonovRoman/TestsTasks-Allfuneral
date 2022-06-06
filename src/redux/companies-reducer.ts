@@ -30,7 +30,7 @@ export type CompaniesStateType = {
     isEnablePreloader: boolean,
 }
 
-type ActionsType = SetCompaniesACType | ChangeStatusPreloaderACType
+type ActionsType = SetCompaniesACType | ChangeStatusPreloaderACType | EditNameInfoBlockACType
 
 const initialState: CompaniesStateType = {
     id: "12",
@@ -63,6 +63,7 @@ const initialState: CompaniesStateType = {
 export const companiesReducer = (state: CompaniesStateType = initialState, action: ActionsType): CompaniesStateType => {
     switch (action.type) {
         case "SET-COMPANIES":
+        case "EDIT-NAME-INFO-BLOCK":
             //проверить как сэтает, меняет ли значения или вручн. копировать надо, map и пр.
             return {...state, ...action.payload}
         case "CHANGE-STATUS-PRELOADER":
@@ -81,6 +82,14 @@ export const SetCompaniesAC = (companiesInfo: string) => {
         }
     } as const
 }
+export const EditNameInfoBlockAC = (infoBlockName: string) => {
+    return {
+        type: "EDIT-NAME-INFO-BLOCK",
+        payload: {
+            infoBlockName
+        }
+    } as const
+}
 
 export const ChangeStatusPreloaderAC = (isEnablePreloader: boolean) => {
     return {
@@ -93,6 +102,7 @@ export const ChangeStatusPreloaderAC = (isEnablePreloader: boolean) => {
 
 export type SetCompaniesACType = ReturnType<typeof SetCompaniesAC>
 export type ChangeStatusPreloaderACType = ReturnType<typeof ChangeStatusPreloaderAC>
+export type EditNameInfoBlockACType = ReturnType<typeof EditNameInfoBlockAC>
 
 
 export const SetCompaniesTC = () => {

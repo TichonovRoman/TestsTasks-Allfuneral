@@ -4,7 +4,7 @@ import {legacy_createStore as createStore} from 'redux'
 import {companiesReducer} from "./companies-reducer";
 
 const rootReducer = combineReducers({
-    auth: companiesReducer,
+    companies: companiesReducer,
   })
 
 

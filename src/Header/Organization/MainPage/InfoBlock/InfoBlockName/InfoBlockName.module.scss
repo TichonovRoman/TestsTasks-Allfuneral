@@ -1,4 +1,5 @@
 @import "src/common/sass/variables";
+@import "src/common/sass/mixins";
 
 @font-face {
   font-family: $textFontFamily;
@@ -6,23 +7,59 @@
 }
 
 .infoBlockName {
-  border: 1px solid red;
+  //border: 1px solid red;
   font-family: $textFontFamily;
-  //font-style: normal;
-  //font-weight: 400;
+  height: 30px;
   margin-left: 40px;
   margin-top: 24px;
   font-size: 20px;
   line-height: 24px;
   color: #222222;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
 
+}
+
+.editBlockName {
   display: flex;
   align-items: center;
 }
 
+.onEditInfoBlockName {
+  font-family: $textFontFamily;
+  //font-style: normal;
+  //font-weight: 400;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: #222222;
+}
+
+
+
 .infoBlockNameRedactionButton {
-  border: none;
-  background: none;
-  cursor: pointer;
-  margin-left: 10px;
+  @include infoBlockNameRedactionButton
+}
+
+.loginCancelButton {
+  @include LoginPageButton(#B9B9B9);
+  font-size: 12px;
+}
+
+.loginSaveButton {
+  @include LoginPageButton(#82B284);
+  font-size: 12px;
+}
+
+.loginCancelButton:hover {
+  @include LoginPageButton(#B9B9B9);
+  font-size: 12px;
+  transform: scale(1.1);
+}
+.loginSaveButton:hover {
+  @include LoginPageButton(#82B284);
+  font-size: 12px;
+  transform: scale(1.1);
 }

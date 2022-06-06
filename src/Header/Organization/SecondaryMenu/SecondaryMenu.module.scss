@@ -1,9 +1,12 @@
-@import "src/common/sass/variables";
 
 @font-face {
-    font-family: $textFontFamily;
+    font-family: 'textFontFamily';
     src: url('../../fonts/proximanova_regular.ttf');
 }
+
+@import "src/common/sass/variables";
+
+
 
 .secondaryMenu {
     width: 224px;
@@ -71,10 +74,10 @@
 .whichAgent {
     transform: matrix(-1, 0, 0, 1, 0, 0);
     font-family: $textFontFamily;
-    font-style: normal;
+    //font-style: normal;
     font-weight: 700;
     font-size: 16px;
-    /*line-height: 160%;*/
+    //line-height: 160%;
     letter-spacing: 0.03em;
     color: #3B3B3B;
 
