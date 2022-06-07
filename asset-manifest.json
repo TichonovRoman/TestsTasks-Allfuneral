@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/TestsTasks-Allfuneral/static/css/main.0dc5ceae.css",
-    "main.js": "/TestsTasks-Allfuneral/static/js/main.232bde64.js",
-    "static/css/344.b58790bd.chunk.css": "/TestsTasks-Allfuneral/static/css/344.b58790bd.chunk.css",
-    "static/js/344.42d053ac.chunk.js": "/TestsTasks-Allfuneral/static/js/344.42d053ac.chunk.js",
+    "main.js": "/TestsTasks-Allfuneral/static/js/main.1092a7af.js",
+    "static/css/597.70162913.chunk.css": "/TestsTasks-Allfuneral/static/css/597.70162913.chunk.css",
+    "static/js/597.5fd2a495.chunk.js": "/TestsTasks-Allfuneral/static/js/597.5fd2a495.chunk.js",
     "static/css/396.07819790.chunk.css": "/TestsTasks-Allfuneral/static/css/396.07819790.chunk.css",
     "static/js/396.eefb0e12.chunk.js": "/TestsTasks-Allfuneral/static/js/396.eefb0e12.chunk.js",
     "static/js/787.6d694c4a.chunk.js": "/TestsTasks-Allfuneral/static/js/787.6d694c4a.chunk.js",
+    "static/js/587.a216d763.chunk.js": "/TestsTasks-Allfuneral/static/js/587.a216d763.chunk.js",
     "static/media/proximanova_regular.ttf": "/TestsTasks-Allfuneral/static/media/proximanova_regular.8181ca4b7c2d1189d78a.ttf",
     "static/media/proximanova_bold.otf": "/TestsTasks-Allfuneral/static/media/proximanova_bold.fcaab2524c5baabd71f6.otf",
     "static/media/proximanova_light.otf": "/TestsTasks-Allfuneral/static/media/proximanova_light.9d69a5449e101ad71e3d.otf",
@@ -21,18 +22,20 @@
     "index.html": "/TestsTasks-Allfuneral/index.html",
     "static/media/OrganizationGroupIcon.svg": "/TestsTasks-Allfuneral/static/media/OrganizationGroupIcon.bde01a1d36ed2bc780e775baf17b1d44.svg",
     "static/media/Linked.svg": "/TestsTasks-Allfuneral/static/media/Linked.d37e77c36fa5953283cc0214cf280358.svg",
+    "static/media/Add.svg": "/TestsTasks-Allfuneral/static/media/Add.1d506fdd849d6a5a8230ace7387fa620.svg",
     "static/media/Exit.svg": "/TestsTasks-Allfuneral/static/media/Exit.a46b6e44987600dc52aec03168a59227.svg",
     "static/media/Search.svg": "/TestsTasks-Allfuneral/static/media/Search.e7c4d5a49d6f523613223f7945352b27.svg",
     "main.0dc5ceae.css.map": "/TestsTasks-Allfuneral/static/css/main.0dc5ceae.css.map",
-    "main.232bde64.js.map": "/TestsTasks-Allfuneral/static/js/main.232bde64.js.map",
-    "344.b58790bd.chunk.css.map": "/TestsTasks-Allfuneral/static/css/344.b58790bd.chunk.css.map",
-    "344.42d053ac.chunk.js.map": "/TestsTasks-Allfuneral/static/js/344.42d053ac.chunk.js.map",
+    "main.1092a7af.js.map": "/TestsTasks-Allfuneral/static/js/main.1092a7af.js.map",
+    "597.70162913.chunk.css.map": "/TestsTasks-Allfuneral/static/css/597.70162913.chunk.css.map",
+    "597.5fd2a495.chunk.js.map": "/TestsTasks-Allfuneral/static/js/597.5fd2a495.chunk.js.map",
     "396.07819790.chunk.css.map": "/TestsTasks-Allfuneral/static/css/396.07819790.chunk.css.map",
     "396.eefb0e12.chunk.js.map": "/TestsTasks-Allfuneral/static/js/396.eefb0e12.chunk.js.map",
-    "787.6d694c4a.chunk.js.map": "/TestsTasks-Allfuneral/static/js/787.6d694c4a.chunk.js.map"
+    "787.6d694c4a.chunk.js.map": "/TestsTasks-Allfuneral/static/js/787.6d694c4a.chunk.js.map",
+    "587.a216d763.chunk.js.map": "/TestsTasks-Allfuneral/static/js/587.a216d763.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0dc5ceae.css",
-    "static/js/main.232bde64.js"
+    "static/js/main.1092a7af.js"
   ]
 }
