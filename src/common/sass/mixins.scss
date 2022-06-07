@@ -79,3 +79,29 @@
   margin-left: 10px;
 }
 
+@mixin input($color) {
+
+  cursor:pointer;
+  width: 200px;
+  height: 20px;
+  border: 1px solid $color;
+  border-radius: 2px;
+}
+
+@mixin fullNameInput($color) {
+
+  cursor:pointer;
+  width: 336px;
+  height: 20px;
+  border: 1px solid $color;
+  border-radius: 2px;
+}
+@mixin photoTitles($color) {
+  //font-family: $textFontFamily;
+  //font-weight: bolder;
+  font-size: 12px;
+  line-height: 16px;
+  color: $color;
+}
+
+

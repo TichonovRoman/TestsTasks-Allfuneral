@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from "../../../MainPage/InfoBlock/BurialBlock/EditBurialBlockModal/EditBurialBlockModal.module.scss"
 import {useDispatch, useSelector} from "react-redux";
 import style from "./ModalDeleteInfo.module.scss";
@@ -56,39 +56,3 @@ const ModalDeleteInfo = React.memo(({
 });
 
 export default ModalDeleteInfo;
-
-
-// type ModalDeleteInfoPropsPage = {}
-//
-// const ModalDeleteInfo = ({}: ModalDeleteInfoPropsPage) => {
-//
-//
-//     const fullName = useSelector<AppRootReducerType, string>((state: AppRootReducerType) => state.companies.name)
-//
-//     return (
-//         <div className={style.loginPage}>
-//             <div className={style.descriptionBlock}>
-//                 <span className={style.loginPageTitle}>
-//                 Удалить карточку
-//                 </span>
-//
-//                 <span className={style.loginPageDescription}>
-//                 Отправить карточку организации {fullName} в архив?
-//                 </span>
-//             </div>
-//
-//             <div className={style.enterNameBlock}>
-//                 <div className={style.buttonGroup}>
-//                     <button className={style.loginCancelButton}>ОТМЕНА</button>
-//                     <button
-//                         className={style.loginSaveButton}
-//                         // onClick={}
-//
-//                     >УДАЛИТЬ</button>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// };
-//
-// export default ModalDeleteInfo;

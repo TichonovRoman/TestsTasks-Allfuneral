@@ -1,6 +1,11 @@
 import {Dispatch} from "redux";
 import {authAPI, newCompaniesInfoDataType} from "../api/testProject-api";
 
+export type PhotoDataType = {
+    "name": string,
+    "filepath": string,
+    "thumbpath": string,
+}
 
 export type CompaniesStateType = {
     "id": string,
@@ -16,13 +21,7 @@ export type CompaniesStateType = {
     "status": string,
     "createdAt": string,
     "updatedAt": string,
-    "photos": [
-        {
-            "name": string,
-            "filepath": string,
-            "thumbpath": string,
-        }
-    ],
+    "photos": PhotoDataType[],
     infoBlockName: string,
     isEnablePreloader: boolean,
 }

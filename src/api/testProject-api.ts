@@ -15,7 +15,6 @@ const instance = axios.create({
 
 
 export type newCompaniesInfoDataType = {
-
     "name": string,
     "shortName": string,
     "businessEntity": string,
@@ -24,7 +23,13 @@ export type newCompaniesInfoDataType = {
     //     issue_date:  string,
     // },
     type: string[]
-
+}
+export type newContactsDataType = {
+    "lastname":string,
+    "firstname":string,
+    "patronymic":string,
+    "phone":string,
+    "email":string,
 }
 // api
 
@@ -44,26 +49,18 @@ export const authAPI = {
     deleteCompaniesInfo(id: string) {
         return instance.delete(`/companies/${id}`)
     },
-}
 
 
-// types
+    getContacts(id: string) {
+        return instance.get(`/contacts/${id}`)
+    },
+    patchContacts(newContacts: newContactsDataType) {
 
-type MeResponseType = {
-    "id": number,
-    "login": string,
-    "email": string
+        return instance.patch(`/contacts/16`, newContacts, {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+    },
 }
 
-export type TodolistType = {
-    id: string
-    title: string
-    addedDate: string
-    order: number
-}
-export type ResponseType<D = {}> = {
-    resultCode: number
-    messages: Array<string>
-    fieldsErrors: Array<string>
-    data: D
-}

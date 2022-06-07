@@ -41,11 +41,7 @@ const BurialBlock = () => {
     return (
 
         <div className={style.burialBlock}>
-            {isEditMode && <EditBurialBlockModal
-                active={isEditMode}
-                setActive={memoizedSetIsEditMode}
-
-            />}
+            {isEditMode && <EditBurialBlockModal active={isEditMode} setActive={memoizedSetIsEditMode}/>}
 
             <div className={style.burialBlockNameBlock}>
                 <div className={style.burialBlockName}>ОБЩАЯ ИНФОРМАЦИЯ</div>
@@ -57,7 +53,6 @@ const BurialBlock = () => {
                     <img src={editIcon}/>
                 </button>
             </div>
-
 
             <div className={style.companyInformation}>
                 <div className={style.lineInfoWrapper}>

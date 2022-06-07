@@ -1,0 +1,63 @@
+@import "src/common/sass/variables";
+@import "src/common/sass/mixins";
+
+.photosBlock {
+  height: 368px;
+  border-bottom: 1px solid #E5E5E5;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.photosBlockName {
+  font-family: $textFontFamily;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #3B3B3B;
+}
+
+.photosBlockNameBlock {
+  //border: 1px solid;
+  display: flex;
+  height: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+.goBackButton {
+  margin-top: 20px;
+  width: 400px;
+  height: 40px;
+  border: 1px solid #E5E5E5;
+  border-radius: 2px;
+
+  background: none;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.goBackButton:hover {
+  border: 1px solid darkgreen;
+}
+
+.goBackButtonName {
+  padding-left: 70px;
+  //font-family: $textFontFamily;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 160%;
+  color: #82B284;
+  position: relative;
+  align-items: center;
+  text-align: center;;
+
+
+}

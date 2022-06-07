@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import style from './MainPageMenuAction.module.scss';
 import strelka from "../../../../icons/Strelka.svg"
 import linkedIcons from "../../../../icons/mainButtonGroup/Linked.svg"
@@ -7,11 +7,15 @@ import trashIcons from "../../../../icons/mainButtonGroup/Trash.svg"
 import {useDispatch} from "react-redux";
 import {SetCompaniesTC} from "../../../../redux/companies-reducer";
 import ModalDeleteInfo from "./ModalDeleteInfo/ModalDeleteInfo";
+import {GetContactsTC} from "../../../../redux/contacts-reducer";
 
 const MainPageMenuAction = () => {
-    const dispatch:any = useDispatch()
+    const dispatch: any = useDispatch()
 
-    const updateData = () => dispatch(SetCompaniesTC())
+    const updateData = () => {
+        dispatch(SetCompaniesTC())
+        dispatch(GetContactsTC("16"))
+    }
 
     const [isActiveModal, setIsActiveModal] = useState<boolean>(false)
 
@@ -19,7 +23,7 @@ const MainPageMenuAction = () => {
 
     return (
         <div className={style.mainPageMenuAction}>
-            {isActiveModal && <ModalDeleteInfo active={isActiveModal} setActive={setIsActiveModal}/>}
+            <ModalDeleteInfo active={isActiveModal} setActive={setIsActiveModal}/>
 
             <button className={style.goBackButton}>
                 <img src={strelka}/>
@@ -31,7 +35,10 @@ const MainPageMenuAction = () => {
                     className={style.mainButton}>
                     <img
                         className={style.mainButtonIcons}
-                        src={linkedIcons}/>
+                        src={linkedIcons}
+                        alt={"linked"}
+                    />
+
                 </button>
                 <button
                     title={"Обновить данные"}
@@ -40,7 +47,8 @@ const MainPageMenuAction = () => {
                 >
                     <img
                         className={style.mainButtonIcons}
-                         src={rotationIcons}
+                        src={rotationIcons}
+                        alt={"rotation"}
 
                     />
                 </button>
@@ -49,7 +57,7 @@ const MainPageMenuAction = () => {
                     className={style.mainButton}
                     onClick={onActiveModal}
                 >
-                    <img className={style.mainButtonIcons} src={trashIcons}/>
+                    <img className={style.mainButtonIcons} src={trashIcons} alt={"delete"}/>
                 </button>
             </div>
 

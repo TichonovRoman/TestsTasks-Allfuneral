@@ -19,7 +19,7 @@ const EditBurialBlockModal = React.memo(({
 
     const fullName = useSelector<AppRootReducerType, string>((state: AppRootReducerType) => state.companies.name)
 
-    //это имя нигде не отображается, то отправлять почему то надо:
+    //это имя нигде не отображается, но отправлять почему то надо:
     const shortName = useSelector<AppRootReducerType, string>((state: AppRootReducerType) => state.companies.shortName)
 
     const contractNumber = useSelector<AppRootReducerType, string>((state: AppRootReducerType) => state.companies.contract.no)
@@ -29,9 +29,6 @@ const EditBurialBlockModal = React.memo(({
 
 
     const finishData = contractData.slice(0, 10)
-    // const year = finishData.substring(0, 4)
-    // const month = finishData.substring(5, 7)
-    // const day = finishData.substring(8, 10)
 
     const companiesTypeInfo = type.map((status) => status === 'agent' ? 'Агент' : 'Подрядчик').toString()
 
@@ -47,7 +44,7 @@ const EditBurialBlockModal = React.memo(({
 
     const onClickCloseModal = () => setActive(false)
 
-    // const data = changedDataValue.toISOString()
+
 
     const onCompanyEditTCHandler = () => {
         const data = new Date(changedDataValue).toISOString()
@@ -57,7 +54,7 @@ const EditBurialBlockModal = React.memo(({
             "shortName": shortName,
             "businessEntity": changedBusinessEntityValue,
 
-            //не понятно какие данные получает сервер, поэтому не отправляем их
+            //не понятно какие формат этих данных ждет сервер, поэтому не отправляем их
             // "contract": {
             //     no: changedNumberValue,
             //     issue_date: "2015-03-12T00:00:00Z",
@@ -85,7 +82,7 @@ const EditBurialBlockModal = React.memo(({
                     <div className={style.lineInfoWrapper}>
                         <div className={style.lineName}>Полное название:</div>
                         <input
-                            className={styles.lineValue}
+                            className={styles.fullNameInput}
                             value={changedNameValue}
                             onChange={(event) => setChangedNameValue(event.currentTarget.value)}
                         />
@@ -97,6 +94,7 @@ const EditBurialBlockModal = React.memo(({
                             <input
                                 style={{marginRight: "5px"}}
                                 value={changedNumberValue}
+                                className={styles.input}
                                 onChange={(event) => setChangedNumberValue(event.currentTarget.value)}
                             />
                             от
@@ -108,7 +106,6 @@ const EditBurialBlockModal = React.memo(({
                             value={changedDataValue}
                             className={style.inputDate}
                             onChange={(event) => setChangedDataValue(event.currentTarget.value)}
-
                         />
 
 
@@ -116,7 +113,7 @@ const EditBurialBlockModal = React.memo(({
                     <div className={style.lineInfoWrapper}>
                         <div className={style.lineName}>Форма:</div>
                         <input
-                            className={style.lineValue}
+                            className={styles.input}
                             value={changedBusinessEntityValue}
                             onChange={(event) => setChangedBusinessEntityValue(event.currentTarget.value)}
 
@@ -127,15 +124,22 @@ const EditBurialBlockModal = React.memo(({
                         <div className={style.lineName}>Тип:</div>
 
                         <input
-                            className={style.lineValue}
+                            className={styles.input}
                             value={сhangedСompaniesTypeInfoValue}
                             onChange={(event) => setChangedСompaniesTypeInfoValue(event.currentTarget.value)}
 
                         />
                     </div>
-
+                    <div className={styles.infoMessage}>
+                        <div>
+                            По факту сервер принимает только новые
+                        </div>
+                        <div>
+                    "Полное название" и "Форма" (их тогда только и меняем)
+                        </div>
+                         <br/>
+                    </div>
                 </div>
-
 
                 <div className={styles.modalButtonGroup}>
                     <button className={styles.loginSaveButton} onClick={onCompanyEditTCHandler}>СОХРАНИТЬ</button>
