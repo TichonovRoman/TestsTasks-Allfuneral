@@ -17,7 +17,6 @@ const PhotosBlock = React.memo(() => {
 
     const dispatch: any = useDispatch();
     const photosArray = useSelector<AppRootReducerType, PhotoDataType[]>(selectors.photosDataSelectors);
-    const myRef = React.useRef<HTMLInputElement | null>(null);
 
     const [inputValue, setInputValue] = useState<any>(undefined);
 
@@ -51,7 +50,7 @@ const PhotosBlock = React.memo(() => {
                 <img style={{marginLeft: "14px"}} src={add} alt={"Добавить изображение"}/>
                 <span className={style.goBackButtonName}>ДОБАВИТЬ ИЗОБРАЖЕНИЕ</span>
             </label>
-            <input value={inputValue} onChange={onPhotoSelected} type="file" ref={myRef} accept="image/*" id={"input__file"}
+            <input value={inputValue} onChange={onPhotoSelected} type="file" accept="image/*" id={"input__file"}
                    style={{visibility: "hidden"}}/>
         </div>
     );

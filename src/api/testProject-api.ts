@@ -1,9 +1,10 @@
 import axios from 'axios'
-import {newCompaniesInfoDataType, newContactsDataType} from "../types/apiTypes";
+import {newCompaniesInfoDataType, newContactsDataType} from "types/apiTypes";
 
-//спрятать токен в env
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiUk9NQSIsImlhdCI6MTY1NDM3MDcyNSwiZXhwIjoxNjU0OTc1NTI1fQ.QlWrHhskS9aZUEPyDgXIzaqrDufKg622VbMuokx2XMY";
-// const token =
+//спрятать токен в env? Для этого проекта не надо
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" +
+    ".eyJ1c2VyIjoiUk9NQSIsImlhdCI6MTY1NDM3MDcyNSwiZXhwIjoxNjU0OTc1NTI1fQ" +
+    ".QlWrHhskS9aZUEPyDgXIzaqrDufKg622VbMuokx2XMY";
 
 const instance = axios.create({
     baseURL: "http://135.181.35.61:2112/",

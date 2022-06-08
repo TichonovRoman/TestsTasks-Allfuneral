@@ -2,7 +2,7 @@ import React from 'react';
 
 import style from "./OtherPage.module.scss"
 
-import {OtherPagePropsPage} from "../../types/otherPageType";
+import {OtherPagePropsPage} from "types/otherPageType";
 
 const OtherPage = ({title}: OtherPagePropsPage) => {
 

@@ -1,11 +1,11 @@
 import {Dispatch} from "redux";
 import {authAPI} from "../api/testProject-api";
-import {newCompaniesInfoDataType} from "../types/apiTypes";
+import {newCompaniesInfoDataType} from "types/apiTypes";
 import {
     CompaniesStateResponseType,
     CompaniesStateType,
     PhotoDataType
-} from "../types/reducers-types/companiesReducerTypes";
+} from "types/reducers-types/companiesReducerTypes";
 
 type ActionsType =
     SetCompaniesACType

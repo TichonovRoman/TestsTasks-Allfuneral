@@ -2,8 +2,8 @@ import {Dispatch} from "redux";
 import {authAPI} from "../api/testProject-api";
 import {ChangeStatusPreloaderAC} from "./companies-reducer";
 
-import {newContactsDataType} from "../types/apiTypes";
-import {ContactsStateType} from "../types/reducers-types/contactsReducerTypes";
+import {newContactsDataType} from "types/apiTypes";
+import {ContactsStateType} from "types/reducers-types/contactsReducerTypes";
 
 type ActionsType = SetContactsACType
 

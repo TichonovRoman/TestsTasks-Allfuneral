@@ -32,4 +32,8 @@ export type BurialBlockRowPropsType = {
     rowName: string,
     value: string
 }
+export type InputPropsType = {
+    nameValue: string,
+    setNameValue: (value: string)=> void
+}
 

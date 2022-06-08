@@ -1,6 +1,6 @@
 import React from "react";
 
-import {PagesListType} from "../types/navbarTypes";
+import {PagesListType} from "types/navbarTypes";
 
 import IconButton from "../NavBar/IconButton/IconButton";
 

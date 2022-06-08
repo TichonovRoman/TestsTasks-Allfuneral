@@ -8,7 +8,7 @@ import Preloader from "../../../common/Preloader/Preloader";
 
 import {useSelector} from "react-redux";
 
-import {AppRootReducerType} from "../../../redux/store";
+import {AppRootReducerType} from "redux/store";
 
 const MainPage = () => {
 

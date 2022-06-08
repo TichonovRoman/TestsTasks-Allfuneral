@@ -1,11 +1,7 @@
 import React, {ChangeEvent, useCallback} from 'react';
 import style from "./CustomInput.module.scss"
 import DefaultInput from "../../DefaultInput/DefaultInput";
-
-type InputPropsType = {
-    nameValue: string,
-    setNameValue: (value: string)=> void
-}
+import {InputPropsType} from "../../../../../../types/mainPageTypes";
 
 const CustomInput = React.memo( ({nameValue, setNameValue}: InputPropsType) => {
 

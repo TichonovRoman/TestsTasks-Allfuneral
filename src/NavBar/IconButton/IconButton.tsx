@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import style from "./IconButton.module.scss";
 import {NavLink} from "react-router-dom";
 
-import {IconButtonPropsType} from "../../types/navbarTypes";
+import {IconButtonPropsType} from "types/navbarTypes";
 
 const IconButton = ({image, linkAddress}: IconButtonPropsType) => {
 
