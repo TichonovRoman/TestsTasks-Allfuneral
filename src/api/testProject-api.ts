@@ -12,7 +12,6 @@ const instance = axios.create({
     }
 });
 
-
 export type newCompaniesInfoDataType = {
     "name": string,
     "shortName": string,
