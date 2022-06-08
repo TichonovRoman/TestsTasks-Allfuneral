@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import style from './PhotosBlock.module.scss'
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootReducerType} from "../../../../../redux/store";
@@ -6,14 +6,19 @@ import {PhotoDataType} from "../../../../../redux/companies-reducer";
 import OnePhotoBlock from "./OnePhotoBlock/OnePhotoBlock";
 import add from "../../../../../icons/Add.svg";
 
-const PhotosBlock = () => {
+// export const selectPhotosState = (state: AppRootReducerType) => {
+//     debugger
+//     return state.companies.photos
+// }
+
+const PhotosBlock = React.memo(() => {
 
     const dispatch: any = useDispatch()
 
-    useEffect(() => {
-            // dispatch(GetContactsTC("16"))
-        }, [dispatch]
-    )
+    // useEffect(() => {
+    //         // dispatch(GetContactsTC("16"))
+    //     }, [dispatch]
+    // )
 
     const [isEditMode, setIsEditMode] = useState(false)
 
@@ -23,8 +28,7 @@ const PhotosBlock = () => {
         setIsEditMode(true)
     }
 
-    const photosArray = useSelector<AppRootReducerType, PhotoDataType[]>((state: AppRootReducerType) => state.companies.photos)
-
+    const photosArray = useSelector<AppRootReducerType, PhotoDataType[]>((state)=>state.companies.photosData)
 
     return (
 
@@ -34,16 +38,19 @@ const PhotosBlock = () => {
                 <div className={style.photosBlockName}>ПРИЛОЖЕННЫЕ ФОТО</div>
             </div>
             <div className={style.photosContainer}>
-                <div>
-                    {
-                        photosArray.map((photoData) => {
-                                return <OnePhotoBlock
-                                    name={photoData.name}
-                                    thumbpath={photoData.thumbpath}/>
-                            }
-                        )
-                    }
-                </div>
+
+                {
+                    photosArray.map(({name, thumbpath}) => {
+
+                            const {v4: uuidv4} = require('uuid');
+                            return <OnePhotoBlock
+                                key={uuidv4()}
+                                name={name}
+                                thumbpath={thumbpath}/>
+                        }
+                    )
+                }
+
             </div>
 
             <button className={style.goBackButton}>
@@ -52,11 +59,10 @@ const PhotosBlock = () => {
             </button>
 
 
-
         </div>
 
 
     );
-};
+});
 
 export default PhotosBlock;

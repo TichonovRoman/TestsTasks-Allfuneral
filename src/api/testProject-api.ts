@@ -7,7 +7,6 @@ const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiUk9NQSIsImlhdCI6
 
 const instance = axios.create({
     baseURL: "http://135.181.35.61:2112/",
-    withCredentials: false,
     headers: {
         Authorization: `Bearer ${token}`,
     }

@@ -21,7 +21,7 @@ export type CompaniesStateType = {
     "status": string,
     "createdAt": string,
     "updatedAt": string,
-    "photos": PhotoDataType[],
+    "photosData": PhotoDataType[],
     infoBlockName: string,
     isEnablePreloader: boolean,
 }
@@ -42,12 +42,17 @@ const initialState: CompaniesStateType = {
     status: "active",
     createdAt: "2020-11-21T08:03:00Z",
     updatedAt: "2020-11-23T09:30:00Z",
-    photos: [
+    photosData: [ //с сервера приходит "photos" - надо сэтать вручную. Если оставить имя photos - то баги!!!
         {
-            name: "0b8fc462dcabf7610a91.png",
+            name: "0.png",
             filepath: "http://135.181.35.61:2112/0b8fc462dcabf7610a91.png",
             thumbpath: "http://135.181.35.61:2112/0b8fc462dcabf7610a91_160x160.png"
-        }
+        },
+        {
+            name: "0b8a91.png",
+            filepath: "http://135.181.35.61:2112/0b8fc462dcabf7610a91.png",
+            thumbpath: "http://135.181.35.61:2112/0b8fc462dcabf7610a91_160x160.png"
+        },
     ],
     infoBlockName: "Перспективные захоронения",
     isEnablePreloader: false,
@@ -57,7 +62,7 @@ export const companiesReducer = (state: CompaniesStateType = initialState, actio
     switch (action.type) {
         case "SET-COMPANIES":
         case "EDIT-NAME-INFO-BLOCK":
-              return {...state, ...action.payload}
+            return {...state, ...action.payload}
         case "CHANGE-STATUS-PRELOADER":
             return {...state, ...action.payload}
         default:
@@ -100,7 +105,7 @@ export type EditNameInfoBlockACType = ReturnType<typeof EditNameInfoBlockAC>
 export const SetCompaniesTC = () => {
 
     return (dispatch: Dispatch) => {
-         dispatch(ChangeStatusPreloaderAC(true))
+        dispatch(ChangeStatusPreloaderAC(true))
         authAPI.getCompaniesInfo()
             .then((response) => {
                 dispatch(SetCompaniesAC(response.data))
@@ -124,7 +129,7 @@ export const companyInfoEditTC = (newInfo: newCompaniesInfoDataType) => {
                 dispatch(SetCompaniesAC(response.data))
             })
             .catch((err) => {
-                               // dispatch(errorMessageAC("some error"))
+                // dispatch(errorMessageAC("some error"))
             })
             .finally(() => {
                 //выключаем крутилку
@@ -140,10 +145,10 @@ export const deleteCompanyCardTC = (id: string) => {
         dispatch(ChangeStatusPreloaderAC(true))
         authAPI.deleteCompaniesInfo(id)
             .then((response) => {
-              console.log(response)
+                console.log(response)
             })
             .catch((err) => {
-                               // dispatch(errorMessageAC("some error"))
+                // dispatch(errorMessageAC("some error"))
             })
             .finally(() => {
                 //выключаем крутилку

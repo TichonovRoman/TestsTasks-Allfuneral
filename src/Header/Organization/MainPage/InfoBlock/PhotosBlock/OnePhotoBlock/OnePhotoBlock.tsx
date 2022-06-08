@@ -6,7 +6,8 @@ export type OnePhotoBlockPropsType = {
     thumbpath: string,
 }
 
-const OnePhotoBlock = ({name, thumbpath}: OnePhotoBlockPropsType) => {
+const OnePhotoBlock = React.memo (({name, thumbpath}: OnePhotoBlockPropsType) => {
+    debugger
     return (
         <div className={style.onePhotoBlock}>
             <img className={style.imgStyle} src={thumbpath}/>
@@ -14,6 +15,6 @@ const OnePhotoBlock = ({name, thumbpath}: OnePhotoBlockPropsType) => {
             <span className={style.photographingDate}>29 января 1837</span>
         </div>
     );
-};
+});
 
 export default OnePhotoBlock;
