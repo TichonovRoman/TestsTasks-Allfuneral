@@ -2,7 +2,7 @@
 @import "src/common/sass/mixins";
 
 .photosBlock {
-  height: 368px;
+  min-height: 368px;
   border-bottom: 1px solid #E5E5E5;
   margin-left: 40px;
   margin-right: 40px;
@@ -29,11 +29,13 @@
 }
 
 .photosContainer {
-  display: flex;
+display: flex;
+  flex-wrap: wrap;
+
   }
 
 .goBackButton {
-  margin-top: 20px;
+  margin-top: 10px;
   width: 400px;
   height: 40px;
   border: 1px solid #E5E5E5;
@@ -51,7 +53,7 @@
 }
 
 .goBackButtonName {
-  padding-left: 70px;
+  padding-left: 60px;
   //font-family: $textFontFamily;
   font-style: normal;
   font-weight: 600;

@@ -60,5 +60,19 @@ export const authAPI = {
             }
         })
     },
+    deletePhoto(companiesId: string, photoName: string) {
+        return instance.delete(`/companies/${companiesId}/image/${photoName}`)
+    },
+    addPhoto(file: File) {
+        debugger
+        let formData = new FormData();
+        formData.append("FILE", file)
+        return instance.post(`/companies/12/image`, file, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+
+            }
+        })
+    }
 }
 

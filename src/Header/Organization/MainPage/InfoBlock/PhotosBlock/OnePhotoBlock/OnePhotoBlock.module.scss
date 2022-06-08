@@ -7,12 +7,42 @@
   width: 160px;
   height: 204px;
   justify-content: space-between;
+  align-items: stretch;
+  margin-right: 24px;
+  margin-bottom: 10px;
+}
 
+.personalPhotoBox {
+  width: 160px;
+  height: 160px;
+  display: flex;
+  justify-content: right;
 }
 
 .imgStyle {
+  position: absolute;
   width: 160px;
   border-radius: 2px;
+  z-index: 1;
+}
+
+.downloadPhotoButton {
+  position: absolute;
+  z-index: 2;
+  border: none;
+  height: 20px;
+  background: none;
+  cursor: pointer;
+}
+
+.photoButton {
+  margin-right: -2px;
+  cursor: pointer;
+
+}
+
+.photoButton:hover {
+  transform: scale(1.2)
 }
 
 .photoName {
