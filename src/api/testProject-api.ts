@@ -1,9 +1,9 @@
 import axios from 'axios'
-
+import {newCompaniesInfoDataType, newContactsDataType} from "../types/apiTypes";
 
 //спрятать токен в env
-
 const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiUk9NQSIsImlhdCI6MTY1NDM3MDcyNSwiZXhwIjoxNjU0OTc1NTI1fQ.QlWrHhskS9aZUEPyDgXIzaqrDufKg622VbMuokx2XMY";
+// const token =
 
 const instance = axios.create({
     baseURL: "http://135.181.35.61:2112/",
@@ -12,32 +12,12 @@ const instance = axios.create({
     }
 });
 
-export type newCompaniesInfoDataType = {
-    "name": string,
-    "shortName": string,
-    "businessEntity": string,
-    // "contract": {
-    //     no:  string,
-    //     issue_date:  string,
-    // },
-    type: string[]
-}
-export type newContactsDataType = {
-    "lastname":string,
-    "firstname":string,
-    "patronymic":string,
-    "phone":string,
-    "email":string,
-}
 // api
-
-
 export const authAPI = {
     getCompaniesInfo() {
         return instance.get(`/companies/12`)
     },
     patchCompaniesInfo(newInfo: newCompaniesInfoDataType) {
-
         return instance.patch(`/companies/12`, newInfo, {
             headers: {
                 "Content-Type": "application/json"
@@ -47,13 +27,10 @@ export const authAPI = {
     deleteCompaniesInfo(id: string) {
         return instance.delete(`/companies/${id}`)
     },
-
-
     getContacts(id: string) {
         return instance.get(`/contacts/${id}`)
     },
     patchContacts(newContacts: newContactsDataType) {
-
         return instance.patch(`/contacts/16`, newContacts, {
             headers: {
                 "Content-Type": "application/json"
@@ -63,14 +40,13 @@ export const authAPI = {
     deletePhoto(companiesId: string, photoName: string) {
         return instance.delete(`/companies/${companiesId}/image/${photoName}`)
     },
-    addPhoto(file: File) {
+    addPhoto(FILE: File) {
         debugger
         let formData = new FormData();
-        formData.append("FILE", file)
-        return instance.post(`/companies/12/image`, file, {
+        formData.append("file", FILE)
+        return instance.post(`/companies/12/image`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
-
             }
         })
     }

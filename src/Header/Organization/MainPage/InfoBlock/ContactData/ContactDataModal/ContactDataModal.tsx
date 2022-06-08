@@ -1,37 +1,54 @@
-import React, {useState} from 'react';
-import styles from "./ContactDataModal.module.scss"
+import React, {ChangeEvent, useCallback, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import style from "../ContactData.module.scss";
-import {AppRootReducerType} from "../../../../../../redux/store";
 import MaskedInput from 'react-text-mask'
-import {ContactsStateType, SetContactsTC} from "../../../../../../redux/contacts-reducer";
-import {selectContactsState} from "../../../../../../selectors/selectors";
 
-type ContactDataModalModalPropsType = {
-    active: boolean,
-    setActive: (status: boolean) => void,
-}
+import styles from "./ContactDataModal.module.scss"
+import style from "../ContactData.module.scss";
+
+import {SetContactsTC} from "../../../../../../redux/contacts-reducer";
+import {selectors} from "../../../../../../selectors/selectors";
+import ContactModalRow from "./ContactModalRow/ContactModalRow";
+
+import {AppRootReducerType} from "../../../../../../redux/store";
+import {ContactDataModalModalPropsType} from "../../../../../../types/mainPageTypes";
+import {ContactsStateType} from "../../../../../../types/reducers-types/contactsReducerTypes";
 
 const ContactDataModal = React.memo(({
                                          active,
                                          setActive,
                                      }: ContactDataModalModalPropsType) => {
-    const dispatch: any = useDispatch()
+    const dispatch: any = useDispatch();
 
-    const {lastname} = useSelector<AppRootReducerType, ContactsStateType>(selectContactsState)
-    const {firstname} = useSelector<AppRootReducerType, ContactsStateType>(selectContactsState)
-    const {patronymic} = useSelector<AppRootReducerType, ContactsStateType>(selectContactsState)
-    const {phone} = useSelector<AppRootReducerType, ContactsStateType>(selectContactsState)
-    const {email} = useSelector<AppRootReducerType, ContactsStateType>(selectContactsState)
+    const {lastname} = useSelector<AppRootReducerType, ContactsStateType>(selectors.selectContactsState);
+    const {firstname} = useSelector<AppRootReducerType, ContactsStateType>(selectors.selectContactsState);
+    const {patronymic} = useSelector<AppRootReducerType, ContactsStateType>(selectors.selectContactsState);
+    const {phone} = useSelector<AppRootReducerType, ContactsStateType>(selectors.selectContactsState);
+    const {email} = useSelector<AppRootReducerType, ContactsStateType>(selectors.selectContactsState);
 
 
-    const [changedLastname, setChangedLastname] = useState<string>(lastname)
-    const [changedFirstname, setChangedFirstname] = useState<string>(firstname)
-    const [changedPatronymic, setChangedPatronymic] = useState<string>(patronymic)
-    const [changedPhoneNumber, setChangedPhoneNumber] = useState<string>(phone.substring(1, 11))
-    const [changedEmail, setChangedEmail] = useState<string>(email)
+    const [changedLastname, setChangedLastname] = useState<string>(lastname);
+    const [changedFirstname, setChangedFirstname] = useState<string>(firstname);
+    const [changedPatronymic, setChangedPatronymic] = useState<string>(patronymic);
+    const [changedPhoneNumber, setChangedPhoneNumber] = useState<string>(phone.substring(1, 11));
+    const [changedEmail, setChangedEmail] = useState<string>(email);
 
-    const onClickCloseModal = () => setActive(false)
+    const setChangedLastnameHandler = useCallback ((event: ChangeEvent<HTMLInputElement>) =>
+        setChangedLastname(event.currentTarget.value),
+        [])
+
+    const setChangedFirstnameHandler = useCallback((event: ChangeEvent<HTMLInputElement>) =>
+        setChangedFirstname(event.currentTarget.value),
+        []);
+
+    const setChangedPatronymicHandler = useCallback((event: ChangeEvent<HTMLInputElement>) =>
+        setChangedPatronymic(event.currentTarget.value),
+        []);
+
+    const setChangedEmailHandler = useCallback((event1: ChangeEvent<HTMLInputElement>) =>
+        setChangedEmail(event1.currentTarget.value),
+        []);
+
+    const onClickCloseModal = () => setActive(false);
 
     const onContactsEditTCHandler = () => {
         const finishPhoneNumber = `7${changedPhoneNumber.replace("(", "")
@@ -50,6 +67,7 @@ const ContactDataModal = React.memo(({
         onClickCloseModal()
     }
 
+
     return (
         <div className={active ? `${styles.modalActive} ${styles.modal}` : `${styles.modal}`}
              onClick={onClickCloseModal}>
@@ -59,37 +77,18 @@ const ContactDataModal = React.memo(({
                  onClick={(e) => e.stopPropagation()}>
                 <div className={styles.modalPageTitle}>Редактирование контактных данных</div>
                 <div className={style.companyInformation}>
-                    <div className={style.lineInfoWrapper}>
-                        <div className={style.lineName}>Фамилия:</div>
 
-                        <input
-                            className={styles.fullNameInput}
-                            value={changedLastname}
-                            onChange={(event) => setChangedLastname(event.currentTarget.value)}
-                        />
+                    <ContactModalRow value={changedLastname}
+                                     name={"Фамилия:"}
+                                     // callBack={setChangedLastnameHandler}/>
+                                     callBack={setChangedLastnameHandler}/>
+                    <ContactModalRow value={changedFirstname}
+                                     name={"Имя:"}
+                                     callBack={setChangedFirstnameHandler}/>
+                    <ContactModalRow value={changedPatronymic}
+                                     name={"Отчество:"}
+                                     callBack={setChangedPatronymicHandler}/>
 
-                    </div>
-
-                    <div className={style.lineInfoWrapper}>
-                        <div className={style.lineName}>Имя:</div>
-
-                        <input
-                            className={styles.fullNameInput}
-                            value={changedFirstname}
-                            onChange={(event) => setChangedFirstname(event.currentTarget.value)}
-                        />
-
-                    </div>
-                    <div className={style.lineInfoWrapper}>
-                        <div className={style.lineName}>Отчество:</div>
-
-                        <input
-                            className={styles.fullNameInput}
-                            value={changedPatronymic}
-                            onChange={(event) => setChangedPatronymic(event.currentTarget.value)}
-                        />
-
-                    </div>
 
                     <div className={style.lineInfoWrapper}>
                         <div className={style.lineName}>Телефон:</div>
@@ -104,25 +103,9 @@ const ContactDataModal = React.memo(({
                             />
                         </span>
                     </div>
-                    <div className={style.lineInfoWrapper}>
-                        <div className={style.lineName}>Эл. почта:</div>
-
-
-
-
-                        <input
-                            className={styles.fullNameInput}
-                            value={changedEmail}
-                            onChange={(event) => setChangedEmail(event.currentTarget.value)}
-                        />
-
-
-
-
-
-
-
-                    </div>
+                    <ContactModalRow value={changedEmail}
+                                     name={"Эл. почта:"}
+                                     callBack={setChangedEmailHandler}/>
                 </div>
                 <div className={styles.modalButtonGroup}>
                     <button className={styles.loginSaveButton} onClick={onContactsEditTCHandler}>СОХРАНИТЬ</button>

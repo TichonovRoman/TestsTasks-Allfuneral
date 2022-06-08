@@ -1,9 +1,10 @@
 import React from 'react';
+
 import style from "./SecondaryMenu.module.scss";
+
 import OrganizationGroupIcon from "../../../icons/OrganizationGroupIcon.svg";
 
-const SecondaryMenu = () => {
-    return (
+const SecondaryMenu = () => (
         <div className={style.secondaryMenu}>
             <div>
                 <div className={style.userStatus}>
@@ -21,6 +22,5 @@ const SecondaryMenu = () => {
 
         </div>
     );
-};
 
 export default SecondaryMenu;

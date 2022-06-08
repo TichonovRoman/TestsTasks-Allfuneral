@@ -43,7 +43,6 @@
 }
 
 .modalPageTitle {
-  //border: 1px solid;
   @include modalTitleFont
 }
 
@@ -57,7 +56,6 @@
 .modalButtonGroup {
   display: flex;
   justify-content: space-between;
-
 }
 
 .loginCancelButton {

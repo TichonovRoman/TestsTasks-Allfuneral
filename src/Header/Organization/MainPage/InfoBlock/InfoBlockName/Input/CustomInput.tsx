@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useCallback} from 'react';
 import style from "./CustomInput.module.scss"
-import DefaultInput from "./DefaultInput/DefaultInput";
+import DefaultInput from "../../DefaultInput/DefaultInput";
 
 type InputPropsType = {
     nameValue: string,
@@ -22,12 +22,12 @@ const CustomInput = React.memo( ({nameValue, setNameValue}: InputPropsType) => {
                             <label className={style.labelName}>ИМЯ</label>
                             <DefaultInput title={"Имя"}
                                           nameValue={nameValue}
-                                          inputValueChangeHandler={inputValueChangeHandler}/>
+                                          inputValueChange={inputValueChangeHandler}/>
                         </div>
                     </form>
                     : <DefaultInput title={"Имя"}
                                     nameValue={nameValue}
-                                    inputValueChangeHandler={inputValueChangeHandler}/>
+                                    inputValueChange={inputValueChangeHandler}/>
             }
         </div>
 

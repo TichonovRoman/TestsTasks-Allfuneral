@@ -1,11 +1,18 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import style from './ContactData.module.scss'
-import editIcon from "../../../../../icons/EditIcon.svg";
 import {useDispatch, useSelector} from "react-redux";
+
+import style from './ContactData.module.scss'
+
+import editIcon from "../../../../../icons/EditIcon.svg";
+
 import {AppRootReducerType} from "../../../../../redux/store";
+import {GetContactsTC} from "../../../../../redux/contacts-reducer";
+
 import ContactDataModal from "./ContactDataModal/ContactDataModal";
-import {ContactsStateType, GetContactsTC} from "../../../../../redux/contacts-reducer";
-import {selectContactsState} from "../../../../../selectors/selectors";
+
+import {selectors} from "../../../../../selectors/selectors";
+import {ContactsStateType} from "../../../../../types/reducers-types/contactsReducerTypes";
+
 
 const ContactData = () => {
 
@@ -24,11 +31,11 @@ const ContactData = () => {
         setIsEditMode(true)
     }
 
-    const {lastname} = useSelector<AppRootReducerType, ContactsStateType>(selectContactsState)
-    const {firstname} = useSelector<AppRootReducerType, ContactsStateType>(selectContactsState)
-    const {patronymic} = useSelector<AppRootReducerType, ContactsStateType>(selectContactsState)
-    const {phone} = useSelector<AppRootReducerType, ContactsStateType>(selectContactsState)
-    const {email} = useSelector<AppRootReducerType, ContactsStateType>(selectContactsState)
+    const {lastname} = useSelector<AppRootReducerType, ContactsStateType>(selectors.selectContactsState)
+    const {firstname} = useSelector<AppRootReducerType, ContactsStateType>(selectors.selectContactsState)
+    const {patronymic} = useSelector<AppRootReducerType, ContactsStateType>(selectors.selectContactsState)
+    const {phone} = useSelector<AppRootReducerType, ContactsStateType>(selectors.selectContactsState)
+    const {email} = useSelector<AppRootReducerType, ContactsStateType>(selectors.selectContactsState)
 
     const finishFormattedPhoneNumber = `+7 
     (${phone.substring(1, 4)}) 

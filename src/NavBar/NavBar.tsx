@@ -1,12 +1,16 @@
 import React from 'react';
+
 import style from './NavBar.module.scss';
+
 import marketIcon from "../icons/Market.svg"
 import homeIcon from "../icons/Home.svg"
 import searchIcon from "../icons/Search.svg"
 import settingsIcon from "../icons/Settings.svg"
 import chatIcon from "../icons/Chat.svg"
 import exitIcon from "../icons/Exit.svg"
+
 import {appPagesDataType} from "../types/navbarTypes";
+
 import {pageButtonCreate} from "../utils/navbarUtils";
 
 //данные кнопок в боковом меню:
@@ -23,9 +27,7 @@ const appPagesData: appPagesDataType = {
     ]
 }
 
-const NavBar = () => {
-
-    return (
+const NavBar = () => (
         <div className={style.navBar}>
             <div>
                 {pageButtonCreate(appPagesData.upPageButton)}
@@ -33,9 +35,8 @@ const NavBar = () => {
             <div>
                 {pageButtonCreate(appPagesData.downPageButton)}
             </div>
-
         </div>
     );
-}
+
 
 export default NavBar;

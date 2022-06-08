@@ -4,8 +4,8 @@
   font-family: $textFontFamily;
   src: url('../../../fonts/proximanova_regular.ttf');
 }
+
 .mainPageMenuAction {
-  //border: 1px solid;
   width: 100%;
   height: 72px;
   border-bottom: 1px solid #E5E5E5;
@@ -25,6 +25,7 @@
   align-items: center;
   cursor: pointer;
 }
+
 .goBackButtonName {
   padding-left: 18px;
   font-family: $textFontFamily;
@@ -35,6 +36,7 @@
   color: #82B284;
 
 }
+
 .goBackButton:hover {
   transform: scale(1.1);
 }
@@ -47,16 +49,4 @@
   margin-right: 30px;
   width: 120px;
   height: 40px;
-}
-
-.mainButton {
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-.mainButtonIcons {
-  width: 20px;
-}
-.mainButtonIcons:hover {
-  transform: scale(1.3);
 }
