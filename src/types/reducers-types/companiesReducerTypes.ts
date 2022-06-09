@@ -38,6 +38,4 @@ export type CompaniesStateResponseType = {
     "createdAt": string,
     "updatedAt": string,
     "photos": PhotoDataType[],
-    infoBlockName: string,
-    isEnablePreloader: boolean,
-}
+ }

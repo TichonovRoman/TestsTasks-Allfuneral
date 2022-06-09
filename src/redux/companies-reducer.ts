@@ -47,9 +47,7 @@ export const companiesReducer = (state: CompaniesStateType = initialState, actio
                 ...state,
                 photosData: state.photosData.filter(photoData => photoData.name !== action.payload.photoName)
             }
-
         case "EDIT-NAME-INFO-BLOCK":
-            return {...state, ...action.payload}
         case "CHANGE-STATUS-PRELOADER":
             return {...state, ...action.payload}
         default:

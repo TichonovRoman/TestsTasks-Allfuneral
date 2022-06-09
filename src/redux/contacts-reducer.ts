@@ -3,7 +3,7 @@ import {authAPI} from "../api/testProject-api";
 import {ChangeStatusPreloaderAC} from "./companies-reducer";
 
 import {newContactsDataType} from "types/apiTypes";
-import {ContactsStateType} from "types/reducers-types/contactsReducerTypes";
+import {ContactsStateType, newContactResponseType} from "types/reducers-types/contactsReducerTypes";
 
 type ActionsType = SetContactsACType
 
@@ -16,8 +16,6 @@ const initialState: ContactsStateType = {
     email: "",
     createdAt: "",
     updatedAt: "",
-
-    isEnablePreloader: false,
 }
 
 export const contactsReducer = (state: ContactsStateType = initialState, action: ActionsType): ContactsStateType => {
@@ -29,7 +27,7 @@ export const contactsReducer = (state: ContactsStateType = initialState, action:
     }
 }
 
-export const SetContactsAC = (contactsData: any) => {
+export const SetContactsAC = (contactsData: newContactResponseType) => {
     return {
         type: "SET-CONTACTS",
         payload: {
