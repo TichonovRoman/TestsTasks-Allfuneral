@@ -1,11 +1,15 @@
 import {Dispatch} from "redux";
-import {authAPI} from "../api/testProject-api";
+
+import {photosAPI} from "../api/photos-api";
+import {companiesAPI} from "../api/companies-api";
+
 import {newCompaniesInfoDataType} from "types/apiTypes";
 import {
     CompaniesStateResponseType,
     CompaniesStateType,
     PhotoDataType
 } from "types/reducers-types/companiesReducerTypes";
+
 
 type ActionsType =
     SetCompaniesACType
@@ -110,7 +114,7 @@ export type DeletePhotoACType = ReturnType<typeof DeletePhotoAC>
 export const SetCompaniesTC = () => async (dispatch: Dispatch) => {
     try {
         dispatch(ChangeStatusPreloaderAC(true))
-        let response = await authAPI.getCompaniesInfo();
+        let response = await companiesAPI.getCompaniesInfo();
         dispatch(SetCompaniesAC(response.data))
     } catch {
         console.error("Не удалость загрузить информацию о компании")
@@ -122,7 +126,7 @@ export const SetCompaniesTC = () => async (dispatch: Dispatch) => {
 export const companyInfoEditTC = (newInfo: newCompaniesInfoDataType) => async (dispatch: Dispatch) => {
     try {
         dispatch(ChangeStatusPreloaderAC(true))
-        let response = await authAPI.patchCompaniesInfo(newInfo);
+        let response = await companiesAPI.patchCompaniesInfo(newInfo);
         dispatch(SetCompaniesAC(response.data))
     } catch {
         console.error("Не удалость изменить информацию о компании")
@@ -134,7 +138,7 @@ export const companyInfoEditTC = (newInfo: newCompaniesInfoDataType) => async (d
 export const deleteCompanyCardTC = (id: string) => async (dispatch: Dispatch) => {
     try {
         dispatch(ChangeStatusPreloaderAC(true))
-        await authAPI.deleteCompaniesInfo(id);
+        await companiesAPI.deleteCompaniesInfo(id);
     } catch {
         console.error("Не удалость удалить карточку компании")
     } finally {
@@ -145,7 +149,7 @@ export const deleteCompanyCardTC = (id: string) => async (dispatch: Dispatch) =>
 export const deletePhotoTC = (companiesId: string, photoName: string) => async (dispatch: Dispatch) => {
     try {
         dispatch(ChangeStatusPreloaderAC(true))
-        await authAPI.deletePhoto(companiesId, photoName);
+        await photosAPI.deletePhoto(companiesId, photoName);
         dispatch(DeletePhotoAC(photoName))
     } catch {
         console.error("Не удалость удалить фотографию")
@@ -157,7 +161,7 @@ export const deletePhotoTC = (companiesId: string, photoName: string) => async (
 export const savePhotoTC = (file: any) => async (dispatch: Dispatch) => {
     try {
         dispatch(ChangeStatusPreloaderAC(true))
-        let response = await authAPI.addPhoto(file);
+        let response = await photosAPI.addPhoto(file);
         dispatch(SavePhotoSuccessAC(response.data))
     } catch {
         console.error("Не удалость добавить фотографию")

@@ -36,4 +36,14 @@ export type InputPropsType = {
     nameValue: string,
     setNameValue: (value: string)=> void
 }
+export type DefaultInputPropsType = {
+    title: string,
+    nameValue: string,
+    inputValueChange: (event: ChangeEvent<HTMLInputElement>) => void
+}
+export type EditNamePacksModalPropsType = {
+    active: boolean,
+    setActive: (status: boolean) => void,
+}
+
 

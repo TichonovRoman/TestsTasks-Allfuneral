@@ -1,0 +1,28 @@
+
+@import "../../../common/sass/mixins";
+.bigButton {
+    @include bigButton(#82B284)
+}
+
+.bigButton :hover {
+    @include bigButton(#A4C7A5)
+    //background-color: #A4C7A5;
+}
+
+.button {
+    @include iconButton(#82B284)
+}
+
+.buttonActive {
+    //@include iconButton(#A4C7A5)
+    background-color: #A4C7A5;
+}
+
+.buttonsIcon {
+    @include buttonsIcon();
+    pointer-events:none;
+}
+
+
+
+

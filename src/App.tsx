@@ -1,17 +1,17 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {Route, Routes} from "react-router-dom";
 
 import style from './App.module.scss';
 
-import Footer from "./Footer/Footer";
-import NavBar from "./NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
+import NavBar from "./components/NavBar/NavBar";
 import Preloader from "./common/Preloader/Preloader";
 
-const Organization = React.lazy(() => import('./Header/Organization/Organization'));
-const OtherPage = React.lazy(() => import('./Header/OtherPages/OtherPage'));
+const Organization = React.lazy(() => import('./components/Header/Organization/Organization'));
+const OtherPage = React.lazy(() => import('./components/Header/OtherPages/OtherPage'));
 
 
-const App = React.memo (() =>
+const App = memo (() =>
         <div className={style.appWrapper}>
             <NavBar/>
             <React.Suspense fallback={<Preloader/>}>

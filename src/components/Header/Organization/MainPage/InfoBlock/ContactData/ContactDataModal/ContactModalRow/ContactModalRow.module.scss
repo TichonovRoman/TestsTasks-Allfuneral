@@ -1,0 +1,14 @@
+@import "../../../../../../../../common/sass/mixins";
+@import "../../../../../../../../common/sass/variables";
+
+.fullNameInput {
+  @include fullNameInput(#CDCDCD)
+}
+
+.fullNameInput:hover {
+  @include fullNameInput(#808080)
+}
+
+.fullNameInput:focus {
+  @include fullNameInput(#3B3B3B)
+}

@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'textFontFamily';
+    src: url('../../fonts/proximanova_regular.ttf');
+}
+
+@import "../../../../common/sass/variables";
+
+.secondaryMenu {
+    width: 224px;
+    background: #F7F7F7;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.13) -2%, #F7F7F7, #F7F7F7, #F7F7F7, #F7F7F7 50%);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.userStatus {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 87px;
+    cursor: pointer;
+}
+.entity {
+    height: 44px;
+    background-color: #EEEEEE;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.13) -2%, #EEEEEE, #EEEEEE, #EEEEEE, #EEEEEE 50%);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+   }
+.entityContent {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 17px;
+    cursor: pointer;
+}
+.organizationGroupIcon {
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    padding-right: 13px;
+}
+.entityListName {
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    font-family: $textFontFamily;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: $primaryColor;
+}
+.whichAgent {
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    font-family: $textFontFamily;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    color: #3B3B3B;
+}
+.agentRole {
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    font-family: $textFontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    color: #3B3B3B;
+    padding-top: 3px;
+}

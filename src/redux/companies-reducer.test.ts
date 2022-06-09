@@ -8,6 +8,8 @@ import {
     SetCompaniesAC
 } from "./companies-reducer";
 
+const FIRST_ELEMENT_IN_ARRAY = 0
+
 let startState: CompaniesStateType = {
     id: "",
     contactId: "",
@@ -89,12 +91,12 @@ test('the companies data must be set correctly', () => {
     expect(Object.keys(endState.contract).length).toBe(2);
     expect(endState.contract.no).toBe("8");
     expect(endState.contract.issue_date).toBe("2011-03-12T00:00:00Z");
-    expect(endState.type[0]).toBe("cool firm");
+    expect(endState.type[FIRST_ELEMENT_IN_ARRAY]).toBe("cool firm");
     expect(endState.status).toBe("active");
     expect(endState.createdAt).toBe("2020-11-21T08:03:00Z");
     expect(endState.updatedAt).toBe("2021-11-21T08:03:00Z");
     expect(endState.photosData.length).toBe(1);
-    expect(endState.photosData[0].name).toBe("0b8fc462dcabf7610a91.png");
+    expect(endState.photosData[FIRST_ELEMENT_IN_ARRAY].name).toBe("0b8fc462dcabf7610a91.png");
 });
 test('photo should be added', () => {
     const newPhotoData = {
@@ -106,7 +108,7 @@ test('photo should be added', () => {
     const endState = companiesReducer(startState, SavePhotoSuccessAC(newPhotoData))
 
     expect(endState.photosData.length).toBe(1);
-    expect(endState.photosData[0].name).toBe("0b8fc462dcabf7610a91.png");
+    expect(endState.photosData[FIRST_ELEMENT_IN_ARRAY].name).toBe("0b8fc462dcabf7610a91.png");
 });
 test('photo should be deleted', () => {
     const deletePhotosName = "Photo.png"

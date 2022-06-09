@@ -2,12 +2,12 @@ import React from "react";
 
 import {PagesListType} from "types/navbarTypes";
 
-import IconButton from "../NavBar/IconButton/IconButton";
+import IconButton from "../components/NavBar/IconButton/IconButton";
 
 export const pageButtonCreate = (pageLists: PagesListType[]) => (
-    pageLists.map((pageButton: PagesListType) => {
+    pageLists.map(({image, linkAddress}) => {
         const {v4: uuidv4} = require('uuid');
-        return <IconButton key={uuidv4()} image={pageButton.image} linkAddress={pageButton.linkAddress}/>
+        return <IconButton key={uuidv4()} image={image} linkAddress={linkAddress}/>
     }))
 
 export const isolationValues = {

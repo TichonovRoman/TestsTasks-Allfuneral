@@ -1,0 +1,63 @@
+@import "../../../../../../common/sass/variables";
+@import "../../../../../../common/sass/mixins";
+
+.burialBlock {
+  border-bottom: 1px solid #E5E5E5;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.burialBlockName {
+  font-family: $textFontFamily;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #3B3B3B;
+}
+
+.burialBlockNameBlock {
+  display: flex;
+  height: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.infoBlockNameRedactionButton {
+  @include infoBlockNameRedactionButton
+}
+
+.companyInformation {
+  height: 148px;
+}
+.lineInfoWrapper {
+  display: flex;
+}
+
+.lineName {
+  width: 150px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: #3B3B3B;
+
+}
+
+.lineValue {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  height: 20px;
+  color: #3B3B3B;
+}
+
+.inputDate {
+  margin-left: 5px;
+  height: 20px;
+}

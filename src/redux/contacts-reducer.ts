@@ -1,9 +1,10 @@
 import {Dispatch} from "redux";
-import {authAPI} from "../api/testProject-api";
 import {ChangeStatusPreloaderAC} from "./companies-reducer";
 
 import {newContactsDataType} from "types/apiTypes";
 import {ContactsStateType, newContactResponseType} from "types/reducers-types/contactsReducerTypes";
+import {contactsAPI} from "../api/contacts-api";
+import {CONTACTS_ID} from "../constants";
 
 type ActionsType = SetContactsACType
 
@@ -41,7 +42,7 @@ export type SetContactsACType = ReturnType<typeof SetContactsAC>
 export const GetContactsTC = (id: string) => async (dispatch: Dispatch) => {
     try {
         dispatch(ChangeStatusPreloaderAC(true))
-        let response = await authAPI.getContacts(id);
+        let response = await contactsAPI.getContacts(CONTACTS_ID);
         dispatch(SetContactsAC(response.data))
     } catch {
         console.error("Не удалость загрузить контакты")
@@ -53,7 +54,7 @@ export const GetContactsTC = (id: string) => async (dispatch: Dispatch) => {
 export const SetContactsTC = (newContacts: newContactsDataType) => async (dispatch: Dispatch) => {
     try {
         dispatch(ChangeStatusPreloaderAC(true))
-        let response = await authAPI.patchContacts(newContacts);
+        let response = await contactsAPI.patchContacts(newContacts);
         dispatch(SetContactsAC(response.data))
     } catch {
         console.error("Не удалость отправить и изменить контакты")

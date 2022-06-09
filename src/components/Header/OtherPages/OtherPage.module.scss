@@ -1,0 +1,10 @@
+@import "../../../common/sass/mixins";
+@import "../../../common/sass/variables";
+
+.page {
+  @include otherPageFontColor($primaryColor)
+}
+
+.redPage {
+  @include otherPageFontColor(salmon)
+}

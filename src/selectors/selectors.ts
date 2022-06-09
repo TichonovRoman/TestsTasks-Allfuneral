@@ -2,18 +2,18 @@ import {AppRootReducerType} from "../redux/store";
 
 export const selectors = {
 
-    selectFullName: (state: AppRootReducerType) => state.companies.name,
-    selectId: (state: AppRootReducerType) => state.companies.id,
-    photosDataSelectors: (state: AppRootReducerType) => state.companies.photosData,
-    infoBlockName: (state: AppRootReducerType) => state.companies.infoBlockName,
+    getSelectFullName: (state: AppRootReducerType) => state.companies.name,
+    getSelectId: (state: AppRootReducerType) => state.companies.id,
+    getPhotosDataSelectors: (state: AppRootReducerType) => state.companies.photosData,
+    getInfoBlockName: (state: AppRootReducerType) => state.companies.infoBlockName,
 
-    selectContactsState: (state: AppRootReducerType) => state.contacts,
-    selectCompaniesState: (state: AppRootReducerType) => state.companies,
+    getSelectContactsState: (state: AppRootReducerType) => state.contacts,
+    getSelectCompaniesState: (state: AppRootReducerType) => state.companies,
 
-    lastname:  (state: AppRootReducerType) => state.contacts.lastname,
-    firstname:  (state: AppRootReducerType) => state.contacts.firstname,
-    patronymic:  (state: AppRootReducerType) => state.contacts.patronymic,
-    phoneNumber:  (state: AppRootReducerType) => state.contacts.phone.substring(1, 11),
-    email:  (state: AppRootReducerType) => state.contacts.email,
+    getLastname:  (state: AppRootReducerType) => state.contacts.lastname,
+    getFirstname:  (state: AppRootReducerType) => state.contacts.firstname,
+    getPatronymic:  (state: AppRootReducerType) => state.contacts.patronymic,
+    // phoneNumber:  (state: AppRootReducerType) => state.contacts.phone.substring(1, 11),
+    getEmail:  (state: AppRootReducerType) => state.contacts.email,
 
 }

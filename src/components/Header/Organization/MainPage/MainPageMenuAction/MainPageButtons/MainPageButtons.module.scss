@@ -1,0 +1,20 @@
+@import "../../../../../../common/sass/variables";
+
+@font-face {
+  font-family: $textFontFamily;
+  src: url('../../../../fonts/proximanova_regular.ttf');
+}
+
+.mainButton {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.mainButtonIcons {
+  width: 20px;
+}
+
+.mainButtonIcons:hover {
+  transform: scale(1.3);
+}
