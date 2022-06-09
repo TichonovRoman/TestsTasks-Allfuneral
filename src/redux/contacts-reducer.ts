@@ -38,35 +38,26 @@ export const SetContactsAC = (contactsData: newContactResponseType) => {
 
 export type SetContactsACType = ReturnType<typeof SetContactsAC>
 
-export const GetContactsTC = (id: string) => {
-
-    return (dispatch: Dispatch) => {
+export const GetContactsTC = (id: string) => async (dispatch: Dispatch) => {
+    try {
         dispatch(ChangeStatusPreloaderAC(true))
-        authAPI.getContacts(id)
-            .then((response) => {
-                dispatch(SetContactsAC(response.data))
-            })
-            .catch((err) => {
-                // dispatch(errorMessageAC("some error"))
-            })
-            .finally(() => {
-                dispatch(ChangeStatusPreloaderAC(false))
-            })
+        let response = await authAPI.getContacts(id);
+        dispatch(SetContactsAC(response.data))
+    } catch {
+        console.error("Не удалость загрузить контакты")
+    } finally {
+        dispatch(ChangeStatusPreloaderAC(false))
     }
 }
 
-export const SetContactsTC = (newContacts: newContactsDataType) => {
-    return (dispatch: Dispatch) => {
+export const SetContactsTC = (newContacts: newContactsDataType) => async (dispatch: Dispatch) => {
+    try {
         dispatch(ChangeStatusPreloaderAC(true))
-        authAPI.patchContacts(newContacts)
-            .then((response) => {
-                dispatch(SetContactsAC(response.data))
-            })
-            .catch((err) => {
-                // dispatch(errorMessageAC("some error"))
-            })
-            .finally(() => {
-                dispatch(ChangeStatusPreloaderAC(false))
-            })
+        let response = await authAPI.patchContacts(newContacts);
+        dispatch(SetContactsAC(response.data))
+    } catch {
+        console.error("Не удалость отправить и изменить контакты")
+    } finally {
+        dispatch(ChangeStatusPreloaderAC(false))
     }
 }

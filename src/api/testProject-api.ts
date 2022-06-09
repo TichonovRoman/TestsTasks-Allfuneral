@@ -42,7 +42,6 @@ export const authAPI = {
         return instance.delete(`/companies/${companiesId}/image/${photoName}`)
     },
     addPhoto(FILE: File) {
-        debugger
         let formData = new FormData();
         formData.append("file", FILE)
         return instance.post(`/companies/12/image`, formData, {

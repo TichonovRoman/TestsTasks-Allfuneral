@@ -107,82 +107,61 @@ export type EditNameInfoBlockACType = ReturnType<typeof EditNameInfoBlockAC>
 export type SavePhotoSuccessACType = ReturnType<typeof SavePhotoSuccessAC>
 export type DeletePhotoACType = ReturnType<typeof DeletePhotoAC>
 
-
-export const SetCompaniesTC = () => {
-    return (dispatch: Dispatch) => {
+export const SetCompaniesTC = () => async (dispatch: Dispatch) => {
+    try {
         dispatch(ChangeStatusPreloaderAC(true))
-        authAPI.getCompaniesInfo()
-            .then((response) => {
-                dispatch(SetCompaniesAC(response.data))
-            })
-            .catch((err) => {
-                // dispatch(errorMessageAC("some error"))
-            })
-            .finally(() => {
-                dispatch(ChangeStatusPreloaderAC(false))
-            })
+        let response = await authAPI.getCompaniesInfo();
+        dispatch(SetCompaniesAC(response.data))
+    } catch {
+        console.error("Не удалость загрузить информацию о компании")
+    } finally {
+        dispatch(ChangeStatusPreloaderAC(false))
     }
 }
 
-export const companyInfoEditTC = (newInfo: newCompaniesInfoDataType) => {
-    return (dispatch: Dispatch) => {
+export const companyInfoEditTC = (newInfo: newCompaniesInfoDataType) => async (dispatch: Dispatch) => {
+    try {
         dispatch(ChangeStatusPreloaderAC(true))
-        authAPI.patchCompaniesInfo(newInfo)
-            .then((response) => {
-                dispatch(SetCompaniesAC(response.data))
-            })
-            .catch((err) => {
-                // dispatch(errorMessageAC("some error"))
-            })
-            .finally(() => {
-                dispatch(ChangeStatusPreloaderAC(false))
-            })
+        let response = await authAPI.patchCompaniesInfo(newInfo);
+        dispatch(SetCompaniesAC(response.data))
+    } catch {
+        console.error("Не удалость изменить информацию о компании")
+    } finally {
+        dispatch(ChangeStatusPreloaderAC(false))
     }
 }
 
-export const deleteCompanyCardTC = (id: string) => {
-    return (dispatch: Dispatch) => {
+export const deleteCompanyCardTC = (id: string) => async (dispatch: Dispatch) => {
+    try {
         dispatch(ChangeStatusPreloaderAC(true))
-        authAPI.deleteCompaniesInfo(id)
-            .then((response) => {
-            })
-            .catch((err) => {
-                // dispatch(errorMessageAC("some error"))
-            })
-            .finally(() => {
-                dispatch(ChangeStatusPreloaderAC(false))
-            })
+        await authAPI.deleteCompaniesInfo(id);
+    } catch {
+        console.error("Не удалость удалить карточку компании")
+    } finally {
+        dispatch(ChangeStatusPreloaderAC(false))
     }
 }
 
-export const deletePhotoTC = (companiesId: string, photoName: string) => {
-    return (dispatch: Dispatch) => {
+export const deletePhotoTC = (companiesId: string, photoName: string) => async (dispatch: Dispatch) => {
+    try {
         dispatch(ChangeStatusPreloaderAC(true))
-        authAPI.deletePhoto(companiesId, photoName)
-            .then((response) => {
-                dispatch(DeletePhotoAC(photoName))
-            })
-            .catch((err) => {
-                // dispatch(errorMessageAC("some error"))
-            })
-            .finally(() => {
-                dispatch(ChangeStatusPreloaderAC(false))
-            })
+        await authAPI.deletePhoto(companiesId, photoName);
+        dispatch(DeletePhotoAC(photoName))
+    } catch {
+        console.error("Не удалость удалить фотографию")
+    } finally {
+        dispatch(ChangeStatusPreloaderAC(false))
     }
 }
 
-export const savePhotoTC = (file: any) => {
-    return (dispatch: Dispatch) => {
+export const savePhotoTC = (file: any) => async (dispatch: Dispatch) => {
+    try {
         dispatch(ChangeStatusPreloaderAC(true))
-        authAPI.addPhoto(file)
-            .then((response) => {
-                dispatch(SavePhotoSuccessAC(response.data))
-            })
-            .catch((err) => {
-                // dispatch(errorMessageAC("some error"))
-            })
-            .finally(() => {
-                dispatch(ChangeStatusPreloaderAC(false))
-            })
+        let response = await authAPI.addPhoto(file);
+        dispatch(SavePhotoSuccessAC(response.data))
+    } catch {
+        console.error("Не удалость добавить фотографию")
+    } finally {
+        dispatch(ChangeStatusPreloaderAC(false))
     }
 }
