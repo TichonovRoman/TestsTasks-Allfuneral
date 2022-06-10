@@ -6,7 +6,7 @@ const DefaultInput = memo( ({title, nameValue, inputValueChange}: DefaultInputPr
     return <input
         type={"text"}
         placeholder={title}
-        className={style.loginInput}
+        className={style.input}
         value={nameValue}
         autoFocus
         onChange={inputValueChange}

@@ -1,4 +1,4 @@
-import {CompaniesStateType} from "../types/reducers-types/companiesReducerTypes";
+import {CompaniesStateType} from "types/reducers-types/companiesReducerTypes";
 import {
     changeStatusPreloaderAC,
     companiesReducer,
@@ -6,7 +6,7 @@ import {
     editNameInfoBlockAC,
     savePhotoSuccessAC,
     setCompaniesAC
-} from "./companies-reducer";
+} from "redux/companies-reducer";
 
 const FIRST_ELEMENT_IN_ARRAY = 0
 

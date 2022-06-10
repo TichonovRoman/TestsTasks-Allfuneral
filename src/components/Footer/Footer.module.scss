@@ -3,8 +3,7 @@
 
 .footer {
   grid-area: c;
-  border: 1px solid;
-  height: 128px;
+  min-height: 80px;
   background: #FFFFFF;
   display: grid;
   grid-template-columns: 272px 1fr;
@@ -31,5 +30,5 @@
   line-height: 16px;
   text-align: center;
   color: #B9B9B9;
-  margin-top: 32px;
+  margin-top: 22px;
 }

@@ -1,5 +1,4 @@
-import {ChangeEvent, useCallback, useState} from "react";
-
+import {ChangeEvent, useState} from "react";
 
 export const useDataInputHook = (finishData: string) => {
     const [changedDataValue, setChangedDataValue] = useState<any>(finishData)
