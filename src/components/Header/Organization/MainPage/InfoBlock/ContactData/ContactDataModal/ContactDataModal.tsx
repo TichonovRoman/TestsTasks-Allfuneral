@@ -5,7 +5,7 @@ import MaskedInput from 'react-text-mask'
 import styles from "./ContactDataModal.module.scss"
 import style from "../ContactData.module.scss";
 
-import {SetContactsTC} from "redux/contacts-reducer";
+import {setContactsTC} from "redux/contacts-reducer";
 import {selectors} from "selectors/selectors";
 import ContactModalRow from "./ContactModalRow/ContactModalRow";
 
@@ -49,7 +49,7 @@ const ContactDataModal = memo(({
             .replace(" ", "")
             .replace("-", "")}`
 
-        dispatch(SetContactsTC({
+        dispatch(setContactsTC({
             "lastname": changedLastname,
             "firstname": changedFirstname,
             "patronymic": changedPatronymic,

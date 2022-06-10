@@ -9,11 +9,11 @@ import trashIcons from "common/icons/mainButtonGroup/Trash.svg"
 
 import {useDispatch} from "react-redux";
 
-import {SetCompaniesTC} from "redux/companies-reducer";
+import {setCompaniesTC} from "redux/companies-reducer";
 import ModalDeleteInfo from "./ModalDeleteInfo/ModalDeleteInfo";
 import MainPageButtons from "./MainPageButtons/MainPageButtons";
 
-import {GetContactsTC} from "redux/contacts-reducer";
+import {getContactsTC} from "redux/contacts-reducer";
 
 import {CONTACTS_ID} from "constants/index";
 import {useIsActiveDeleteModalHook} from "hooks/useInputHook/useIsActiveModalHook";
@@ -26,8 +26,8 @@ const MainPageMenuAction = memo(() => {
 
     const handleUpdateDataClick = useCallback(
         () => {
-            dispatch(SetCompaniesTC())
-            dispatch(GetContactsTC(CONTACTS_ID))
+            dispatch(setCompaniesTC())
+            dispatch(getContactsTC(CONTACTS_ID))
         }, [CONTACTS_ID]
     );
     return (

@@ -59,7 +59,7 @@ export const companiesReducer = (state: CompaniesStateType = initialState, actio
     }
 }
 
-export const SetCompaniesAC = (companiesInfo: CompaniesStateResponseType) => {
+export const setCompaniesAC = (companiesInfo: CompaniesStateResponseType) => {
     return {
         type: "SET-COMPANIES",
         payload: {
@@ -68,7 +68,7 @@ export const SetCompaniesAC = (companiesInfo: CompaniesStateResponseType) => {
     } as const
 }
 
-export const EditNameInfoBlockAC = (infoBlockName: string) => {
+export const editNameInfoBlockAC = (infoBlockName: string) => {
     return {
         type: "EDIT-NAME-INFO-BLOCK",
         payload: {
@@ -77,7 +77,7 @@ export const EditNameInfoBlockAC = (infoBlockName: string) => {
     } as const
 }
 
-export const ChangeStatusPreloaderAC = (isEnablePreloader: boolean) => {
+export const changeStatusPreloaderAC = (isEnablePreloader: boolean) => {
     return {
         type: "CHANGE-STATUS-PRELOADER",
         payload: {
@@ -86,7 +86,7 @@ export const ChangeStatusPreloaderAC = (isEnablePreloader: boolean) => {
     } as const
 }
 
-export const SavePhotoSuccessAC = (newPhotoData: PhotoDataType) => {
+export const savePhotoSuccessAC = (newPhotoData: PhotoDataType) => {
     return {
         type: "PHOTO_SUCCESS",
         payload: {
@@ -95,7 +95,7 @@ export const SavePhotoSuccessAC = (newPhotoData: PhotoDataType) => {
     } as const
 }
 
-export const DeletePhotoAC = (photoName: string) => {
+export const deletePhotoAC = (photoName: string) => {
     return {
 
         type: "DELETE-PHOTO",
@@ -105,67 +105,67 @@ export const DeletePhotoAC = (photoName: string) => {
     } as const
 }
 
-export type SetCompaniesACType = ReturnType<typeof SetCompaniesAC>
-export type ChangeStatusPreloaderACType = ReturnType<typeof ChangeStatusPreloaderAC>
-export type EditNameInfoBlockACType = ReturnType<typeof EditNameInfoBlockAC>
-export type SavePhotoSuccessACType = ReturnType<typeof SavePhotoSuccessAC>
-export type DeletePhotoACType = ReturnType<typeof DeletePhotoAC>
+export type SetCompaniesACType = ReturnType<typeof setCompaniesAC>
+export type ChangeStatusPreloaderACType = ReturnType<typeof changeStatusPreloaderAC>
+export type EditNameInfoBlockACType = ReturnType<typeof editNameInfoBlockAC>
+export type SavePhotoSuccessACType = ReturnType<typeof savePhotoSuccessAC>
+export type DeletePhotoACType = ReturnType<typeof deletePhotoAC>
 
-export const SetCompaniesTC = () => async (dispatch: Dispatch) => {
+export const setCompaniesTC = () => async (dispatch: Dispatch) => {
     try {
-        dispatch(ChangeStatusPreloaderAC(true))
+        dispatch(changeStatusPreloaderAC(true))
         let response = await companiesAPI.getCompaniesInfo();
-        dispatch(SetCompaniesAC(response.data))
+        dispatch(setCompaniesAC(response.data))
     } catch {
         console.error("Не удалость загрузить информацию о компании")
     } finally {
-        dispatch(ChangeStatusPreloaderAC(false))
+        dispatch(changeStatusPreloaderAC(false))
     }
 }
 
 export const companyInfoEditTC = (newInfo: newCompaniesInfoDataType) => async (dispatch: Dispatch) => {
     try {
-        dispatch(ChangeStatusPreloaderAC(true))
+        dispatch(changeStatusPreloaderAC(true))
         let response = await companiesAPI.patchCompaniesInfo(newInfo);
-        dispatch(SetCompaniesAC(response.data))
+        dispatch(setCompaniesAC(response.data))
     } catch {
         console.error("Не удалость изменить информацию о компании")
     } finally {
-        dispatch(ChangeStatusPreloaderAC(false))
+        dispatch(changeStatusPreloaderAC(false))
     }
 }
 
 export const deleteCompanyCardTC = (id: string) => async (dispatch: Dispatch) => {
     try {
-        dispatch(ChangeStatusPreloaderAC(true))
+        dispatch(changeStatusPreloaderAC(true))
         await companiesAPI.deleteCompaniesInfo(id);
     } catch {
         console.error("Не удалость удалить карточку компании")
     } finally {
-        dispatch(ChangeStatusPreloaderAC(false))
+        dispatch(changeStatusPreloaderAC(false))
     }
 }
 
 export const deletePhotoTC = (companiesId: string, photoName: string) => async (dispatch: Dispatch) => {
     try {
-        dispatch(ChangeStatusPreloaderAC(true))
+        dispatch(changeStatusPreloaderAC(true))
         await photosAPI.deletePhoto(companiesId, photoName);
-        dispatch(DeletePhotoAC(photoName))
+        dispatch(deletePhotoAC(photoName))
     } catch {
         console.error("Не удалость удалить фотографию")
     } finally {
-        dispatch(ChangeStatusPreloaderAC(false))
+        dispatch(changeStatusPreloaderAC(false))
     }
 }
 
 export const savePhotoTC = (file: any) => async (dispatch: Dispatch) => {
     try {
-        dispatch(ChangeStatusPreloaderAC(true))
+        dispatch(changeStatusPreloaderAC(true))
         let response = await photosAPI.addPhoto(file);
-        dispatch(SavePhotoSuccessAC(response.data))
+        dispatch(savePhotoSuccessAC(response.data))
     } catch {
         console.error("Не удалость добавить фотографию")
     } finally {
-        dispatch(ChangeStatusPreloaderAC(false))
+        dispatch(changeStatusPreloaderAC(false))
     }
 }

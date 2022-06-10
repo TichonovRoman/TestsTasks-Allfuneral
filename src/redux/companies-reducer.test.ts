@@ -1,11 +1,11 @@
 import {CompaniesStateType} from "../types/reducers-types/companiesReducerTypes";
 import {
-    ChangeStatusPreloaderAC,
+    changeStatusPreloaderAC,
     companiesReducer,
-    DeletePhotoAC,
-    EditNameInfoBlockAC,
-    SavePhotoSuccessAC,
-    SetCompaniesAC
+    deletePhotoAC,
+    editNameInfoBlockAC,
+    savePhotoSuccessAC,
+    setCompaniesAC
 } from "./companies-reducer";
 
 const FIRST_ELEMENT_IN_ARRAY = 0
@@ -81,7 +81,7 @@ test('the companies data must be set correctly', () => {
         ],
     }
 
-    const endState = companiesReducer(startState, SetCompaniesAC(newCompaniesResponse))
+    const endState = companiesReducer(startState, setCompaniesAC(newCompaniesResponse))
 
     expect(endState.id).toBe("14");
     expect(endState.contactId).toBe("15");
@@ -105,7 +105,7 @@ test('photo should be added', () => {
         "thumbpath": "http://135.181.35.61:2112/0b8fc462dcabf7610a91_160x160.png"
     }
 
-    const endState = companiesReducer(startState, SavePhotoSuccessAC(newPhotoData))
+    const endState = companiesReducer(startState, savePhotoSuccessAC(newPhotoData))
 
     expect(endState.photosData.length).toBe(1);
     expect(endState.photosData[FIRST_ELEMENT_IN_ARRAY].name).toBe("0b8fc462dcabf7610a91.png");
@@ -113,21 +113,21 @@ test('photo should be added', () => {
 test('photo should be deleted', () => {
     const deletePhotosName = "Photo.png"
 
-    const endState = companiesReducer(startState, DeletePhotoAC(deletePhotosName))
+    const endState = companiesReducer(startState, deletePhotoAC(deletePhotosName))
 
     expect(endState.photosData.length).toBe(0);
 });
 test('the name of the block must be changed', () => {
     const deletePhotosName = "Отлично"
 
-    const endState = companiesReducer(startState, EditNameInfoBlockAC(deletePhotosName))
+    const endState = companiesReducer(startState, editNameInfoBlockAC(deletePhotosName))
 
     expect(endState.infoBlockName).toBe("Отлично");
 });
 test('the status of the preloader must be changed', () => {
     const newStatus = true
 
-    const endState = companiesReducer(startState, ChangeStatusPreloaderAC(newStatus))
+    const endState = companiesReducer(startState, changeStatusPreloaderAC(newStatus))
 
     expect(endState.isEnablePreloader).toBe(true);
 });

@@ -8,7 +8,7 @@ import editIcon from "common/icons/EditIcon.svg";
 import {AppRootReducerType} from "redux/store";
 import {ContactsStateType} from "types/reducers-types/contactsReducerTypes";
 
-import {GetContactsTC} from "redux/contacts-reducer";
+import {getContactsTC} from "redux/contacts-reducer";
 
 import ContactDataModal from "./ContactDataModal/ContactDataModal";
 
@@ -30,7 +30,7 @@ const ContactData = memo(() => {
     const [isEditMode, setIsEditMode] = useState(false)
 
     useEffect(() => {
-            dispatch(GetContactsTC(CONTACTS_ID))
+            dispatch(getContactsTC(CONTACTS_ID))
         }, [dispatch]
     )
 

@@ -1,10 +1,10 @@
 import {Dispatch} from "redux";
-import {ChangeStatusPreloaderAC} from "./companies-reducer";
+import {changeStatusPreloaderAC} from "./companies-reducer";
 
 import {newContactsDataType} from "types/apiTypes";
 import {ContactsStateType, newContactResponseType} from "types/reducers-types/contactsReducerTypes";
-import {contactsAPI} from "../api/contacts-api";
-import {CONTACTS_ID} from "../constants";
+import {contactsAPI} from "api/contacts-api";
+import {CONTACTS_ID} from "constants/index";
 
 type ActionsType = SetContactsACType
 
@@ -28,7 +28,7 @@ export const contactsReducer = (state: ContactsStateType = initialState, action:
     }
 }
 
-export const SetContactsAC = (contactsData: newContactResponseType) => {
+export const setContactsAC = (contactsData: newContactResponseType) => {
     return {
         type: "SET-CONTACTS",
         payload: {
@@ -37,28 +37,28 @@ export const SetContactsAC = (contactsData: newContactResponseType) => {
     } as const
 }
 
-export type SetContactsACType = ReturnType<typeof SetContactsAC>
+export type SetContactsACType = ReturnType<typeof setContactsAC>
 
-export const GetContactsTC = (id: string) => async (dispatch: Dispatch) => {
+export const getContactsTC = (id: string) => async (dispatch: Dispatch) => {
     try {
-        dispatch(ChangeStatusPreloaderAC(true))
+        dispatch(changeStatusPreloaderAC(true))
         let response = await contactsAPI.getContacts(CONTACTS_ID);
-        dispatch(SetContactsAC(response.data))
+        dispatch(setContactsAC(response.data))
     } catch {
         console.error("Не удалость загрузить контакты")
     } finally {
-        dispatch(ChangeStatusPreloaderAC(false))
+        dispatch(changeStatusPreloaderAC(false))
     }
 }
 
-export const SetContactsTC = (newContacts: newContactsDataType) => async (dispatch: Dispatch) => {
+export const setContactsTC = (newContacts: newContactsDataType) => async (dispatch: Dispatch) => {
     try {
-        dispatch(ChangeStatusPreloaderAC(true))
+        dispatch(changeStatusPreloaderAC(true))
         let response = await contactsAPI.patchContacts(newContacts);
-        dispatch(SetContactsAC(response.data))
+        dispatch(setContactsAC(response.data))
     } catch {
         console.error("Не удалость отправить и изменить контакты")
     } finally {
-        dispatch(ChangeStatusPreloaderAC(false))
+        dispatch(changeStatusPreloaderAC(false))
     }
 }

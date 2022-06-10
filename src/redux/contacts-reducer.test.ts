@@ -1,5 +1,5 @@
 import {ContactsStateType} from "../types/reducers-types/contactsReducerTypes";
-import {contactsReducer, SetContactsAC} from "./contacts-reducer";
+import {contactsReducer, setContactsAC} from "./contacts-reducer";
 
 let startState: ContactsStateType = {
     id: "",
@@ -37,7 +37,7 @@ test('the contacts must be set correctly', () => {
         updatedAt: "1901-06-09T07:56:08.129Z"
     }
 
-    const endState = contactsReducer(startState, SetContactsAC(newContactResponse))
+    const endState = contactsReducer(startState, setContactsAC(newContactResponse))
 
     expect(endState.id).toBe("18");
     expect(endState.lastname).toBe("Хренова");

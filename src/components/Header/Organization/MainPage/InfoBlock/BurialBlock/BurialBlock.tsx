@@ -8,7 +8,7 @@ import editIcon from "common/icons/EditIcon.svg";
 import {AppRootReducerType} from "redux/store";
 import {CompaniesStateType} from "types/reducers-types/companiesReducerTypes";
 
-import {SetCompaniesTC} from "redux/companies-reducer";
+import {setCompaniesTC} from "redux/companies-reducer";
 
 import {selectors} from "selectors/selectors";
 import {isolationValues} from "utils/navbarUtils";
@@ -35,7 +35,7 @@ const BurialBlock = memo(() => {
     const companiesTypeInfo = type.map((status) => status === 'agent' ? 'Агент' : ' Подрядчик').toString()
 
     useEffect(() => {
-            dispatch(SetCompaniesTC())
+            dispatch(setCompaniesTC())
         }, [dispatch]
     );
 
