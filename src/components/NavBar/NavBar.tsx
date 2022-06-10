@@ -2,16 +2,16 @@ import React, {memo} from 'react';
 
 import style from './NavBar.module.scss';
 
-import marketIcon from "../../common/icons/Market.svg"
-import homeIcon from "../../common/icons/Home.svg"
-import searchIcon from "../../common/icons/Search.svg"
-import settingsIcon from "../../common/icons/Settings.svg"
-import chatIcon from "../../common/icons/Chat.svg"
-import exitIcon from "../../common/icons/Exit.svg"
+import marketIcon from "common/icons/Market.svg"
+import homeIcon from "common/icons/Home.svg"
+import searchIcon from "common/icons/Search.svg"
+import settingsIcon from "common/icons/Settings.svg"
+import chatIcon from "common/icons/Chat.svg"
+import exitIcon from "common/icons/Exit.svg"
 
-import {appPagesDataType} from "../../types/navbarTypes";
+import {appPagesDataType} from "types/navbarTypes";
 
-import {pageButtonCreate} from "../../utils/navbarUtils";
+import {pageButtonCreate} from "utils/navbarUtils";
 
 //данные кнопок в боковом меню:
 const appPagesData: appPagesDataType = {

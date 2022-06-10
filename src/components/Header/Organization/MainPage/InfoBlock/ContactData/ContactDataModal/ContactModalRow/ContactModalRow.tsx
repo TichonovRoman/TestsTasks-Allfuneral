@@ -3,7 +3,7 @@ import React, {memo} from 'react';
 import styles from "./ContactModalRow.module.scss";
 import style from "../../ContactData.module.scss";
 
-import {ContactModalRowPropsType} from "../../../../../../../../types/mainPageTypes";
+import {ContactModalRowPropsType} from "types/mainPageTypes";
 
 const ContactModalRow = memo(({name, value, callBack} :ContactModalRowPropsType) => {
     return (

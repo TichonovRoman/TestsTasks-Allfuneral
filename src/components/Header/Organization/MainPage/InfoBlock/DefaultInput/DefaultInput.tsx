@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import style from "./DefaultInput.module.scss"
-import {DefaultInputPropsType} from "../../../../../../types/mainPageTypes";
+import {DefaultInputPropsType} from "types/mainPageTypes";
 
 const DefaultInput = memo( ({title, nameValue, inputValueChange}: DefaultInputPropsType) => {
     return <input

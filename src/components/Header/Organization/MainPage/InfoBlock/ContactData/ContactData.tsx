@@ -3,18 +3,18 @@ import {useDispatch, useSelector} from "react-redux";
 
 import style from './ContactData.module.scss'
 
-import editIcon from "../../../../../../common/icons/EditIcon.svg";
+import editIcon from "common/icons/EditIcon.svg";
 
-import {AppRootReducerType} from "../../../../../../redux/store";
-import {ContactsStateType} from "../../../../../../types/reducers-types/contactsReducerTypes";
+import {AppRootReducerType} from "redux/store";
+import {ContactsStateType} from "types/reducers-types/contactsReducerTypes";
 
-import {GetContactsTC} from "../../../../../../redux/contacts-reducer";
+import {GetContactsTC} from "redux/contacts-reducer";
 
 import ContactDataModal from "./ContactDataModal/ContactDataModal";
 
-import {selectors} from "../../../../../../selectors/selectors";
+import {selectors} from "selectors/selectors";
 
-import {CONTACTS_ID} from "../../../../../../constants";
+import {CONTACTS_ID} from "constants/index";
 
 
 const ContactData = memo(() => {

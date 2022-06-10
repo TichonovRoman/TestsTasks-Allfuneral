@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import style from "./BurialBlockRow.module.scss";
 
-import {BurialBlockRowPropsType} from "../../../../../../../types/mainPageTypes";
+import {BurialBlockRowPropsType} from "types/mainPageTypes";
 
 const BurialBlockRow = memo(({rowName, value}: BurialBlockRowPropsType) => {
     return (

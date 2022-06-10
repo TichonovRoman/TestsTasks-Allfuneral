@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 
 import style from "./SecondaryMenu.module.scss";
 
-import OrganizationGroupIcon from "../../../../common/icons/OrganizationGroupIcon.svg";
+import OrganizationGroupIcon from "common/icons/OrganizationGroupIcon.svg";
 
 const SecondaryMenu = memo(() => (
         <div className={style.secondaryMenu}>

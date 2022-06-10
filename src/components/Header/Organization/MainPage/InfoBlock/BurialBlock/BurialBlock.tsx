@@ -3,15 +3,15 @@ import {useDispatch, useSelector} from "react-redux";
 
 import style from './BurialBlock.module.scss'
 
-import editIcon from "../../../../../../common/icons/EditIcon.svg";
+import editIcon from "common/icons/EditIcon.svg";
 
-import {AppRootReducerType} from "../../../../../../redux/store";
-import {CompaniesStateType} from "../../../../../../types/reducers-types/companiesReducerTypes";
+import {AppRootReducerType} from "redux/store";
+import {CompaniesStateType} from "types/reducers-types/companiesReducerTypes";
 
-import {SetCompaniesTC} from "../../../../../../redux/companies-reducer";
+import {SetCompaniesTC} from "redux/companies-reducer";
 
-import {selectors} from "../../../../../../selectors/selectors";
-import {isolationValues} from "../../../../../../utils/navbarUtils";
+import {selectors} from "selectors/selectors";
+import {isolationValues} from "utils/navbarUtils";
 
 import BurialBlockRow from "./BurialBlockRow/BurialBlockRow";
 import EditBurialBlockModal from "./EditBurialBlockModal/EditBurialBlockModal";
@@ -52,7 +52,7 @@ const BurialBlock = memo(() => {
                     title={"Редактировать карточку организации"}
                     className={style.infoBlockNameRedactionButton}
                     onClick={onEditModeClick}>
-                    <img src={editIcon}/>
+                    <img src={editIcon} alt={"Редактировать карточку организации"}/>
                 </button>
             </div>
             <div className={style.companyInformation}>

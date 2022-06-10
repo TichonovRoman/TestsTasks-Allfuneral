@@ -5,10 +5,10 @@ import {useDispatch, useSelector} from "react-redux";
 import styles from "../../InfoBlock/BurialBlock/EditBurialBlockModal/EditBurialBlockModal.module.scss"
 import style from "./ModalDeleteInfo.module.scss";
 
-import {AppRootReducerType} from "../../../../../../redux/store";
-import {deleteCompanyCardTC} from "../../../../../../redux/companies-reducer";
-import {ModalDeleteInfoPropsType} from "../../../../../../types/mainPageTypes";
-import {selectors} from "../../../../../../selectors/selectors";
+import {AppRootReducerType} from "redux/store";
+import {deleteCompanyCardTC} from "redux/companies-reducer";
+import {ModalDeleteInfoPropsType} from "types/mainPageTypes";
+import {selectors} from "selectors/selectors";
 
 const ModalDeleteInfo = memo(({
                                         active,

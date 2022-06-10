@@ -1,7 +1,7 @@
 import {newCompaniesInfoDataType} from "types/apiTypes";
 
 import {apiConfig} from "./apiConfig";
-import {COMPANIES_ID} from "../constants";
+import {COMPANIES_ID} from "constants/index";
 
 export const companiesAPI = {
     getCompaniesInfo() {

@@ -2,7 +2,7 @@ import React from "react";
 
 import {PagesListType} from "types/navbarTypes";
 
-import IconButton from "../components/NavBar/IconButton/IconButton";
+import IconButton from "components/NavBar/IconButton/IconButton";
 
 export const pageButtonCreate = (pageLists: PagesListType[]) => (
     pageLists.map(({image, linkAddress}) => {

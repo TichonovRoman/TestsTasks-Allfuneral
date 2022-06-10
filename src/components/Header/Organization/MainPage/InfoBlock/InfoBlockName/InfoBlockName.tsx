@@ -3,11 +3,10 @@ import React, {ChangeEvent, memo, useCallback, useState} from 'react';
 import style from './InfoBlockName.module.scss';
 
 import {useDispatch, useSelector} from "react-redux";
-import editIcon from "../../../../../../common/icons/EditIcon.svg"
+import editIcon from "common/icons/EditIcon.svg"
 import DefaultInput from "../DefaultInput/DefaultInput";
-import {EditNameInfoBlockAC} from "../../../../../../redux/companies-reducer";
-
-import {selectors} from "../../../../../../selectors/selectors";
+import {EditNameInfoBlockAC} from "redux/companies-reducer";
+import {selectors} from "selectors/selectors";
 
 const InfoBlockName = memo(() => {
 

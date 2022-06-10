@@ -1,20 +1,22 @@
-import React, {ChangeEvent, memo, useState} from 'react';
+import React, {memo} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
 import styles from "./EditBurialBlockModal.module.scss"
 import style from "../BurialBlock.module.scss";
 
-import {companyInfoEditTC} from "../../../../../../../redux/companies-reducer";
+import {companyInfoEditTC} from "redux/companies-reducer";
 
-import {AppRootReducerType} from "../../../../../../../redux/store";
-import {EditNamePacksModalPropsType} from "../../../../../../../types/mainPageTypes";
-import {selectors} from "../../../../../../../selectors/selectors";
-import {CompaniesStateType} from "../../../../../../../types/reducers-types/companiesReducerTypes";
+import {AppRootReducerType} from "redux/store";
+import {EditNamePacksModalPropsType} from "types/mainPageTypes";
+import {selectors} from "selectors/selectors";
+import {CompaniesStateType} from "types/reducers-types/companiesReducerTypes";
 import {
-    useBusinessEntityInputHook, useCompaniesTypeInputHook,
-    useDataInputHook, useNameValueInputHook,
+    useBusinessEntityInputHook,
+    useCompaniesTypeInputHook,
+    useDataInputHook,
+    useNameValueInputHook,
     useNumberInputHook
-} from "../../../../../../../hooks/useInputHook/useBurialBlockInputHook";
+} from "hooks/useInputHook/useBurialBlockInputHook";
 
 const EditBurialBlockModal = memo(({
                                        active,

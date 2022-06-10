@@ -4,14 +4,14 @@ import style from './MainPage.module.scss';
 
 import MainPageMenuAction from "./MainPageMenuAction/MainPageMenuAction";
 import InfoBlock from "./InfoBlock/InfoBlock";
-import Preloader from "../../../../common/Preloader/Preloader";
+import Preloader from "common/Preloader/Preloader";
 
 import {useSelector} from "react-redux";
 
 import {AppRootReducerType} from "redux/store";
-import {CompaniesStateType} from "../../../../types/reducers-types/companiesReducerTypes";
+import {CompaniesStateType} from "types/reducers-types/companiesReducerTypes";
 
-import {selectors} from "../../../../selectors/selectors";
+import {selectors} from "selectors/selectors";
 
 
 const MainPage = memo(() => {

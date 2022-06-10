@@ -5,18 +5,19 @@ import MaskedInput from 'react-text-mask'
 import styles from "./ContactDataModal.module.scss"
 import style from "../ContactData.module.scss";
 
-import {SetContactsTC} from "../../../../../../../redux/contacts-reducer";
-import {selectors} from "../../../../../../../selectors/selectors";
+import {SetContactsTC} from "redux/contacts-reducer";
+import {selectors} from "selectors/selectors";
 import ContactModalRow from "./ContactModalRow/ContactModalRow";
 
-import {AppRootReducerType} from "../../../../../../../redux/store";
-import {ContactDataModalModalPropsType} from "../../../../../../../types/mainPageTypes";
-import {ContactsStateType} from "../../../../../../../types/reducers-types/contactsReducerTypes";
+import {AppRootReducerType} from "redux/store";
+import {ContactDataModalModalPropsType} from "types/mainPageTypes";
+import {ContactsStateType} from "types/reducers-types/contactsReducerTypes";
 import {
     useEmailInputHook,
     useFirstnameInputHook,
     useLastNameInputHook,
-    usePatronymicInputHook, usePhoneNumberInputHook
+    usePatronymicInputHook,
+    usePhoneNumberInputHook
 } from "../../../../../../../hooks/useInputHook/useContactDataInputHook";
 
 const mask = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]

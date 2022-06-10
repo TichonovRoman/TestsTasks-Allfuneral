@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 
 import style from "./MainPageButtons.module.scss";
 
-import {MainPageButtonsPropsType} from "../../../../../../types/mainPageTypes";
+import {MainPageButtonsPropsType} from "types/mainPageTypes";
 
 const MainPageButtons = memo( ({title, src, alt, onClick}: MainPageButtonsPropsType) => (
         <button

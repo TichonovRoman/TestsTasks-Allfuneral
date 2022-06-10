@@ -3,12 +3,12 @@ import {Route, Routes} from "react-router-dom";
 
 import style from './App.module.scss';
 
-import Footer from "./components/Footer/Footer";
-import NavBar from "./components/NavBar/NavBar";
-import Preloader from "./common/Preloader/Preloader";
+import Footer from "components/Footer/Footer";
+import NavBar from "components/NavBar/NavBar";
+import Preloader from "common/Preloader/Preloader";
 
-const Organization = React.lazy(() => import('./components/Header/Organization/Organization'));
-const OtherPage = React.lazy(() => import('./components/Header/OtherPages/OtherPage'));
+const Organization = React.lazy(() => import('components/Header/Organization/Organization'));
+const OtherPage = React.lazy(() => import('components/Header/OtherPages/OtherPage'));
 
 
 const App = memo (() =>
