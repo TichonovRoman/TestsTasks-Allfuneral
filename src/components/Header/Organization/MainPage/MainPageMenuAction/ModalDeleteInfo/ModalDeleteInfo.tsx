@@ -6,7 +6,7 @@ import styles from "../../InfoBlock/BurialBlock/EditBurialBlockModal/EditBurialB
 import style from "./ModalDeleteInfo.module.scss";
 
 import {AppRootReducerType} from "redux/store";
-import {deleteCompanyCardTC} from "redux/companies-reducer";
+import {deleteCompanyCardTC} from "redux/reducers/companies-reducer";
 import {ModalDeleteInfoPropsType} from "types/mainPageTypes";
 import {selectors} from "selectors/selectors";
 

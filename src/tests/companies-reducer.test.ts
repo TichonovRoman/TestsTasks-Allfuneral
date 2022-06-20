@@ -6,7 +6,7 @@ import {
     editNameInfoBlockAC,
     savePhotoSuccessAC,
     setCompaniesAC
-} from "redux/companies-reducer";
+} from "redux/reducers/companies-reducer";
 
 const FIRST_ELEMENT_IN_ARRAY = 0
 

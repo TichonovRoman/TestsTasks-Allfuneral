@@ -5,7 +5,7 @@ import style from './InfoBlockName.module.scss';
 import {useDispatch, useSelector} from "react-redux";
 import editIcon from "common/icons/EditIcon.svg"
 import DefaultInput from "../DefaultInput/DefaultInput";
-import {editNameInfoBlockAC} from "redux/companies-reducer";
+import {editNameInfoBlockAC} from "redux/reducers/companies-reducer";
 import {selectors} from "selectors/selectors";
 
 const InfoBlockName = memo(() => {

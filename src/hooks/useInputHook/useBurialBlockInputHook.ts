@@ -1,7 +1,7 @@
 import {ChangeEvent, useState} from "react";
 
 export const useDataInputHook = (finishData: string) => {
-    const [changedDataValue, setChangedDataValue] = useState<any>(finishData)
+    const [changedDataValue, setChangedDataValue] = useState<string>(finishData)
     const handleSetChangedDataValueChange = (event: ChangeEvent<HTMLInputElement>) => setChangedDataValue(event.currentTarget.value)
     return {changedDataValue, handleSetChangedDataValueChange}
 }

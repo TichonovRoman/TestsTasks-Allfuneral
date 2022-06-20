@@ -5,7 +5,7 @@ import style from "./OnePhotoBlock.module.scss";
 import deleteIcons from "../../../../../../../common/icons/deleteIcons.svg"
 
 import {useDispatch} from "react-redux";
-import {deletePhotoTC} from "../../../../../../../redux/companies-reducer";
+import {deletePhotoTC} from "../../../../../../../redux/reducers/companies-reducer";
 import {OnePhotoBlockPropsType} from "../../../../../../../types/mainPageTypes";
 
 import {COMPANIES_ID} from "../../../../../../../constants";

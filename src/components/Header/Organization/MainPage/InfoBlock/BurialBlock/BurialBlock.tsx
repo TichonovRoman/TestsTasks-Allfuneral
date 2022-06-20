@@ -8,7 +8,7 @@ import editIcon from "common/icons/EditIcon.svg";
 import {AppRootReducerType} from "redux/store";
 import {CompaniesStateType} from "types/reducers-types/companiesReducerTypes";
 
-import {setCompaniesTC} from "redux/companies-reducer";
+import {setCompaniesTC} from "redux/reducers/companies-reducer";
 
 import {selectors} from "selectors/selectors";
 import {isolationValues} from "utils/navbarUtils";

@@ -4,7 +4,7 @@ import style from "./AddPhotoButton.module.scss";
 
 import add from "common/icons/Add.svg";
 
-import {savePhotoTC} from "redux/companies-reducer";
+import {savePhotoTC} from "redux/reducers/companies-reducer";
 
 import {useDispatch} from "react-redux";
 

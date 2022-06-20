@@ -8,7 +8,7 @@ import editIcon from "common/icons/EditIcon.svg";
 import {AppRootReducerType} from "redux/store";
 import {ContactsStateType} from "types/reducers-types/contactsReducerTypes";
 
-import {getContactsTC} from "redux/contacts-reducer";
+import {getContactsTC} from "redux/reducers/contacts-reducer";
 
 import ContactDataModal from "./ContactDataModal/ContactDataModal";
 

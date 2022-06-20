@@ -1,7 +1,7 @@
 import {Dispatch} from "redux";
 
-import {photosAPI} from "../api/photos-api";
-import {companiesAPI} from "../api/companies-api";
+import {photosAPI} from "../../api/photos-api";
+import {companiesAPI} from "../../api/companies-api";
 
 import {newCompaniesInfoDataType} from "types/apiTypes";
 import {
@@ -9,7 +9,7 @@ import {
     CompaniesStateType,
     PhotoDataType
 } from "types/reducers-types/companiesReducerTypes";
-
+import {companiesInitialState} from "./initialStates/initialStates";
 
 type ActionsType =
     SetCompaniesACType
@@ -18,27 +18,7 @@ type ActionsType =
     | SavePhotoSuccessACType
     | DeletePhotoACType
 
-const initialState: CompaniesStateType = {
-    id: "",
-    contactId: "",
-    name: "",
-    shortName: "",
-    businessEntity: "",
-    contract: {
-        no: "",
-        issue_date: ""
-    },
-    type: [],
-    status: "",
-    createdAt: "",
-    updatedAt: "",
-    //с сервера приходит "photos" - надо сэтать вручную. Если оставить имя photos - то баги!!!
-    photosData: [],
-    infoBlockName: "Перспективные захоронения",
-    isEnablePreloader: false,
-}
-
-export const companiesReducer = (state: CompaniesStateType = initialState, action: ActionsType): CompaniesStateType => {
+export const companiesReducer = (state: CompaniesStateType = companiesInitialState, action: ActionsType): CompaniesStateType => {
 
     switch (action.type) {
         case "SET-COMPANIES":

@@ -1,5 +1,5 @@
 import {ContactsStateType} from "types/reducers-types/contactsReducerTypes";
-import {contactsReducer, setContactsAC} from "redux/contacts-reducer";
+import {contactsReducer, setContactsAC} from "redux/reducers/contacts-reducer";
 
 let startState: ContactsStateType = {
     id: "",

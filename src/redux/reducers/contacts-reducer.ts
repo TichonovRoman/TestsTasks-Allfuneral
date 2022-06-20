@@ -5,21 +5,11 @@ import {newContactsDataType} from "types/apiTypes";
 import {ContactsStateType, newContactResponseType} from "types/reducers-types/contactsReducerTypes";
 import {contactsAPI} from "api/contacts-api";
 import {CONTACTS_ID} from "constants/index";
+import {contactsInitialState} from "./initialStates/initialStates";
 
 type ActionsType = SetContactsACType
 
-const initialState: ContactsStateType = {
-    id: "",
-    lastname: "",
-    firstname: "",
-    patronymic: "",
-    phone: "",
-    email: "",
-    createdAt: "",
-    updatedAt: "",
-}
-
-export const contactsReducer = (state: ContactsStateType = initialState, action: ActionsType): ContactsStateType => {
+export const contactsReducer = (state: ContactsStateType = contactsInitialState, action: ActionsType): ContactsStateType => {
     switch (action.type) {
         case "SET-CONTACTS":
             return {...state, ...action.payload}

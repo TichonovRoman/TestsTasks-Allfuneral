@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import styles from "./EditBurialBlockModal.module.scss"
 import style from "../BurialBlock.module.scss";
 
-import {companyInfoEditTC} from "redux/companies-reducer";
+import {companyInfoEditTC} from "redux/reducers/companies-reducer";
 
 import {AppRootReducerType} from "redux/store";
 import {EditNamePacksModalPropsType} from "types/mainPageTypes";

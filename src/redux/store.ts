@@ -1,9 +1,8 @@
-import {applyMiddleware, combineReducers} from "redux";
+import {applyMiddleware, combineReducers, legacy_createStore as createStore} from "redux";
 import thunkMiddleware from 'redux-thunk'
-import {legacy_createStore as createStore} from 'redux'
 
-import {companiesReducer} from "./companies-reducer";
-import {contactsReducer} from "./contacts-reducer";
+import {companiesReducer} from "./reducers/companies-reducer";
+import {contactsReducer} from "./reducers/contacts-reducer";
 
 const rootReducer = combineReducers({
     companies: companiesReducer,

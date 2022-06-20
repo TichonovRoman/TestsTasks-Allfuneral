@@ -9,11 +9,11 @@ import trashIcons from "common/icons/mainButtonGroup/Trash.svg"
 
 import {useDispatch} from "react-redux";
 
-import {setCompaniesTC} from "redux/companies-reducer";
+import {setCompaniesTC} from "redux/reducers/companies-reducer";
 import ModalDeleteInfo from "./ModalDeleteInfo/ModalDeleteInfo";
 import MainPageButtons from "./MainPageButtons/MainPageButtons";
 
-import {getContactsTC} from "redux/contacts-reducer";
+import {getContactsTC} from "redux/reducers/contacts-reducer";
 
 import {CONTACTS_ID} from "constants/index";
 import {useIsActiveDeleteModalHook} from "hooks/useInputHook/useIsActiveModalHook";

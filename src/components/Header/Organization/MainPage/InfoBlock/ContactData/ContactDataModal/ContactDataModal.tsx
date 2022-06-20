@@ -5,7 +5,7 @@ import MaskedInput from 'react-text-mask'
 import styles from "./ContactDataModal.module.scss"
 import style from "../ContactData.module.scss";
 
-import {setContactsTC} from "redux/contacts-reducer";
+import {setContactsTC} from "redux/reducers/contacts-reducer";
 import {selectors} from "selectors/selectors";
 import ContactModalRow from "./ContactModalRow/ContactModalRow";
 
