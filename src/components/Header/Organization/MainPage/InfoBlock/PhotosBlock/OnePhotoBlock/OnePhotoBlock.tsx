@@ -2,13 +2,13 @@ import React, {memo} from 'react';
 
 import style from "./OnePhotoBlock.module.scss";
 
-import deleteIcons from "../../../../../../../common/icons/deleteIcons.svg"
+import deleteIcons from "common/icons/deleteIcons.svg"
 
 import {useDispatch} from "react-redux";
-import {deletePhotoTC} from "../../../../../../../redux/reducers/companies-reducer";
-import {OnePhotoBlockPropsType} from "../../../../../../../types/mainPageTypes";
+import {deletePhotoTC} from "redux/reducers/companies-reducer";
+import {OnePhotoBlockPropsType} from "types/mainPageTypes";
 
-import {COMPANIES_ID} from "../../../../../../../constants";
+import {COMPANIES_ID} from "constants/index";
 
 const OnePhotoBlock = memo(({name, thumbpath}: OnePhotoBlockPropsType) => {
 
@@ -21,9 +21,9 @@ const OnePhotoBlock = memo(({name, thumbpath}: OnePhotoBlockPropsType) => {
     return (
         <div className={style.onePhotoBlock}>
             <div className={style.personalPhotoBox}>
-                <img className={style.imgStyle} src={thumbpath}/>
+                <img className={style.imgStyle} src={thumbpath} alt={"img"}/>
                 <button onClick={onPhotoDeleteClick} className={style.downloadPhotoButton}>
-                    <img src={deleteIcons} className={style.photoButton}/>
+                    <img src={deleteIcons} className={style.photoButton} alt={"Delete icon"}/>
                 </button>
             </div>
             <span className={style.photoName}>{name}</span>

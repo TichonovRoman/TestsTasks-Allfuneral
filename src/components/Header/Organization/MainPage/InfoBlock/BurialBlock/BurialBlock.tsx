@@ -10,7 +10,7 @@ import {CompaniesStateType} from "types/reducers-types/companiesReducerTypes";
 
 import {setCompaniesTC} from "redux/reducers/companies-reducer";
 
-import {selectors} from "selectors/selectors";
+import {getSelectCompaniesState, selectors} from "selectors/selectors";
 import {isolationValues} from "utils/navbarUtils";
 
 import BurialBlockRow from "./BurialBlockRow/BurialBlockRow";
@@ -22,8 +22,8 @@ const BurialBlock = memo(() => {
 
     const contractNumber = useSelector<AppRootReducerType, string>((state: AppRootReducerType) => state.companies.contract.no);
     const contractData = useSelector<AppRootReducerType, string>((state: AppRootReducerType) => state.companies.contract.issue_date);
-    const {businessEntity} = useSelector<AppRootReducerType, CompaniesStateType>(selectors.getSelectCompaniesState);
-    const {type} = useSelector<AppRootReducerType, CompaniesStateType>(selectors.getSelectCompaniesState);
+    const {businessEntity} = useSelector<AppRootReducerType, CompaniesStateType>(getSelectCompaniesState);
+    const {type} = useSelector<AppRootReducerType, CompaniesStateType>(getSelectCompaniesState);
     const fullName = useSelector<AppRootReducerType, string>(selectors.getSelectFullName);
 
     const [isEditMode, setIsEditMode] = useState(false);
@@ -39,7 +39,7 @@ const BurialBlock = memo(() => {
         }, [dispatch]
     );
 
-    const memoizedSetIsEditMode = useCallback(setIsEditMode, []);
+    const memoizedSetIsEditMode = useCallback(setIsEditMode, [setIsEditMode]);
     const onEditModeClick = () => setIsEditMode(true);
 
     return (

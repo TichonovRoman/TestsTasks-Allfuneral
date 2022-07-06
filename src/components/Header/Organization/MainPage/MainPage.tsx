@@ -11,12 +11,12 @@ import {useSelector} from "react-redux";
 import {AppRootReducerType} from "redux/store";
 import {CompaniesStateType} from "types/reducers-types/companiesReducerTypes";
 
-import {selectors} from "selectors/selectors";
+import {getSelectCompaniesState} from "selectors/selectors";
 
 
 const MainPage = memo(() => {
 
-    const {isEnablePreloader} = useSelector<AppRootReducerType, CompaniesStateType>(selectors.getSelectCompaniesState);
+    const {isEnablePreloader} = useSelector<AppRootReducerType, CompaniesStateType>(getSelectCompaniesState);
 
     return (
             <div className={style.mainPage}>

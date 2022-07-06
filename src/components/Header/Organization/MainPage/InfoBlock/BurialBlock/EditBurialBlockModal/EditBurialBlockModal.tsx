@@ -8,7 +8,7 @@ import {companyInfoEditTC} from "redux/reducers/companies-reducer";
 
 import {AppRootReducerType} from "redux/store";
 import {EditNamePacksModalPropsType} from "types/mainPageTypes";
-import {selectors} from "selectors/selectors";
+import {getSelectCompaniesState, selectors} from "selectors/selectors";
 import {CompaniesStateType} from "types/reducers-types/companiesReducerTypes";
 import {
     useBusinessEntityInputHook,
@@ -29,7 +29,7 @@ const EditBurialBlockModal = memo(({
     const shortName = useSelector<AppRootReducerType, string>((state: AppRootReducerType) => state.companies.shortName)
     const contractNumber = useSelector<AppRootReducerType, string>((state: AppRootReducerType) => state.companies.contract.no)
     const contractData = useSelector<AppRootReducerType, string>((state: AppRootReducerType) => state.companies.contract.issue_date)
-    const {businessEntity} = useSelector<AppRootReducerType, CompaniesStateType>(selectors.getSelectCompaniesState)
+    const {businessEntity} = useSelector<AppRootReducerType, CompaniesStateType>(getSelectCompaniesState)
     const type = useSelector<AppRootReducerType, string[]>((state: AppRootReducerType) => state.companies.type)
 
     const finishData = contractData.slice(0, 10)

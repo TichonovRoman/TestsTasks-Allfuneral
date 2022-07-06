@@ -19,7 +19,6 @@ const SecondaryMenu = memo(() => (
 
                 </div>
             </div>
-
         </div>
     ));
 

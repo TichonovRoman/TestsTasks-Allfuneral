@@ -1,4 +1,5 @@
 import {AppRootReducerType} from "../redux/store";
+import {createSelector} from "reselect";
 
 export const selectors = {
 
@@ -13,7 +14,14 @@ export const selectors = {
     getLastname:  (state: AppRootReducerType) => state.contacts.lastname,
     getFirstname:  (state: AppRootReducerType) => state.contacts.firstname,
     getPatronymic:  (state: AppRootReducerType) => state.contacts.patronymic,
-    // phoneNumber:  (state: AppRootReducerType) => state.contacts.phone.substring(1, 11),
     getEmail:  (state: AppRootReducerType) => state.contacts.email,
 
 }
+
+
+// Reselect нужен при вычислении, которые делаем в селекторах. Он кэширует данные. Это так, для примера:
+
+export const getSelectCompaniesState = createSelector(
+    selectors.getSelectCompaniesState,
+    companies => companies
+);

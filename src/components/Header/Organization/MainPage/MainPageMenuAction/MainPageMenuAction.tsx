@@ -2,7 +2,7 @@ import React, {memo, useCallback} from 'react';
 
 import style from './MainPageMenuAction.module.scss';
 
-import strelka from "common/icons/Strelka.svg"
+import arrow from "common/icons/Strelka.svg"
 import linkedIcons from "common/icons/mainButtonGroup/Linked.svg"
 import rotationIcons from "common/icons/mainButtonGroup/Rotation.svg"
 import trashIcons from "common/icons/mainButtonGroup/Trash.svg"
@@ -28,14 +28,14 @@ const MainPageMenuAction = memo(() => {
         () => {
             dispatch(setCompaniesTC())
             dispatch(getContactsTC(CONTACTS_ID))
-        }, [CONTACTS_ID]
+        }, [dispatch, CONTACTS_ID]
     );
     return (
         <div className={style.mainPageMenuAction}>
             <ModalDeleteInfo active={isActiveModal} setActive={setIsActiveModal}/>
 
             <button className={style.goBackButton}>
-                <img src={strelka}/>
+                <img src={arrow} alt={"Icon arrow"}/>
                 <span className={style.goBackButtonName}>К СПИСКУ ЮРИДИЧЕСКИХ ЛИЦ</span>
             </button>
             <div className={style.mainButtonGroup}>

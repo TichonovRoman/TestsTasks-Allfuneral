@@ -40,7 +40,7 @@ const ContactData = memo(() => {
     -${phone.substring(7, 9)}
     -${phone.substring(9, 11)}`
 
-    const memoizedSetIsEditMode = useCallback(setIsEditMode, [])
+    const memoizedSetIsEditMode = useCallback(setIsEditMode, [setIsEditMode])
     const onEditModeClick = () => {
         setIsEditMode(true)
     }
@@ -58,7 +58,7 @@ const ContactData = memo(() => {
                     title={"Редактировать контактные данные"}
                     className={style.infoBlockNameRedactionButton}
                     onClick={onEditModeClick}>
-                    <img src={editIcon}/>
+                    <img src={editIcon} alt={"Edit Icon"}/>
                 </button>
             </div>
             <div className={style.companyInformation}>
